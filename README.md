@@ -1,6 +1,7 @@
 ## 📄 About
 
 Bem-vindo ao repositório do projeto 01-bit! 🚀
+
 Este projeto foi desenvolvido com o objetivo de criar soluções digitais acessíveis e intuitivas, voltadas para pequenas empresas e empreendedores que desejam iniciar ou expandir sua presença no mundo digital. O foco está em entregar interfaces modernas, funcionais e fáceis de usar.
 
 
