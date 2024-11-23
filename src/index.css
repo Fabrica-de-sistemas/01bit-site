@@ -6,4 +6,7 @@
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
+  input:checked ~ ul {
+    @apply flex;
+  }
 }
