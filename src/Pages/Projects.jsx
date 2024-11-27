@@ -2,7 +2,7 @@ import ImgProject from '../assets/mobile/images/imgProject.png';
 
 const Projects = () => {
   return (
-    <section id="projects" className="mt-20 bg-secondary-03 py-10  px-70">
+    <section className="mt-20 bg-secondary-03 py-10">
       <h2 className="text-center font-bold text-[28px] text-grayColors-01 mb-8">
         Our Projects
       </h2>

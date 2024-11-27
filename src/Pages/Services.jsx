@@ -4,7 +4,7 @@ import { Database } from 'react-feather';
 import { TrendingUp } from 'react-feather';
 const Services = () => {
   return (
-    <section id="services" className="mt-20 mx-[10%] flex flex-col items-center gap-10">
+    <section className="mt-20 mx-10 flex flex-col items-center gap-10">
       <h2 className="text-center font-bold text-[28px] text-secondary-01">
         Our Services
       </h2>
