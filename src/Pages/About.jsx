@@ -8,7 +8,6 @@ const About = () => {
       id="about" 
       className="mt-20 px-[8%] hidden md:flex md:justify-right md:items-center"
     >
-      {/* Coluna Esquerda - Imagens */}
       <div className="md:w-[20%] md:flex md:flex-col md:gap-3 md:mr-[20px]">
         <img 
           className="md:w-[274px] md:h-[375px] object-cover rounded-[10px]" 
@@ -22,7 +21,6 @@ const About = () => {
         />
       </div>
       
-      {/* Coluna Central - Imagem Principal */}
       <div className="md:w-[20%] md:flex md:flex-col md:mr-[25px]">
         <img 
           className="md:w-[274px] md:h-[476px] object-cover rounded-[10px]" 
@@ -31,7 +29,6 @@ const About = () => {
         />
       </div>
 
-      {/* Coluna Direita - Texto */}
       <div className="md:w-[45%] md:text-left">
         <h2 className="font-bold text-4xl text-secondary-01 mb-5">
           About Us

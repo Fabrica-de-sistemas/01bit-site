@@ -6,7 +6,6 @@ const ContactUs = () => {
       id="contact"
       className="hidden md:flex mt-20 mx-auto w-full md:w-[60%] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 px-5 md:px-10 flex-col md:flex-row md:items-start md:justify-between"
     >
-      {/* Informações de Contato */}
       <div className="w-[48%] bg-primary-03 text-grayColors-01 rounded-3xl px-8 py-6 flex-col justify-between">
         <h2 className="text-white text-[24px] font-bold mb-6">Contact Info</h2>
         <div className="flex flex-col gap-4 text-white">
@@ -30,7 +29,6 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Formulário de Contato */}
       <div className="w-full md:w-[48%] px-5 md:px-0">
         <h2 className="text-center md:text-left font-bold text-[28px] text-secondary-01 mb-8">
           Send a message
