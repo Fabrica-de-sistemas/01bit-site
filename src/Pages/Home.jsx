@@ -2,7 +2,7 @@ import Robot from '../assets/desktop/Robot.svg';
 
 const Home = () => {
   return (
-    <section id="home" className="mt-10 mx-[5%] flex justify-between items-center">
+    <section id="home" className="mt-10 mx-[5%] flex justify-between items-center md:flex row hidden">
       <div className="flex flex-col justify-center items-start gap-5 h-[650px] max-w-[40%]">
         <h1 className="text-4xl leading-[3rem] font-bold text-secondary-01">
           Turning Ideas into Innovative Solutions

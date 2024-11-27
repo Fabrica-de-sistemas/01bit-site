@@ -2,8 +2,12 @@ import { MapPin, Mail, Phone, Linkedin, Instagram } from "react-feather";
 
 const ContactUs = () => {
   return (
-    <section id="contact" className="mt-20 flex flex-col lg:flex-row items-center justify-between mx-auto w-[60%] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10">
-      <div className="lg:w-[48%] w-full bg-primary-03 text-grayColors-01 rounded-3xl px-8 py-6 flex flex-col justify-between">
+    <section
+      id="contact"
+      className="hidden md:flex mt-20 mx-auto w-full md:w-[60%] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 px-5 md:px-10 flex-col md:flex-row md:items-start md:justify-between"
+    >
+      {/* Informações de Contato */}
+      <div className="w-[48%] bg-primary-03 text-grayColors-01 rounded-3xl px-8 py-6 flex-col justify-between">
         <h2 className="text-white text-[24px] font-bold mb-6">Contact Info</h2>
         <div className="flex flex-col gap-4 text-white">
           <div className="flex items-center gap-4">
@@ -26,12 +30,13 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="lg:w-[48%] w-full px-5">
-        <h2 className="text-center font-bold text-[28px] text-secondary-01 mb-8">
+      {/* Formulário de Contato */}
+      <div className="w-full md:w-[48%] px-5 md:px-0">
+        <h2 className="text-center md:text-left font-bold text-[28px] text-secondary-01 mb-8">
           Send a message
         </h2>
         <form className="grid gap-5">
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <input
               type="text"
               placeholder="First Name"
@@ -44,7 +49,7 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <input
               type="email"
               placeholder="Email Address"
@@ -62,7 +67,7 @@ const ContactUs = () => {
             className="w-full py-[10px] px-4 border-b-2 border-secondary-02 border-opacity-30 text-secondary-02 placeholder-secondary-02 placeholder-opacity-30 focus:outline-none focus:border-primary-02"
           />
 
-          <button className="w-[40%] bg-primary-03 py-[10px] px-4 text-center rounded-3xl text-grayColors-01">
+          <button className="w-full md:w-[40%] bg-primary-03 py-[10px] px-4 text-center rounded-3xl text-grayColors-01 mx-auto md:mx-0">
             Send
           </button>
         </form>

@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="mt-5 mx-10 flex justify-between items-center">
+      <header className="mt-5 mx-10 flex justify-between items-center md:flex row hidden">
         <img src={Logo} alt="Logo 01-bit" className="w-20" />
 
         <nav className="flex justify-center flex-grow">

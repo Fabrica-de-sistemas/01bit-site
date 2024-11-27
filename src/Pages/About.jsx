@@ -4,16 +4,35 @@ import Image03 from '../assets/desktop/Image03.png';
 
 const About = () => {
   return (
-    <section id="about" className="mt-20 px-[8%] flex justify-right items-center">
-      <div className="w-[20%] flex flex-col gap-3 mr-[20px]">
-        <img className="w-[274px] h-[375px] object-cover rounded-[10px]" src={Image02} alt="Imagem 2" />
-        <img className="w-[274px] h-[375px] object-cover rounded-[10px]" src={Image03} alt="Imagem 3" />
+    <section 
+      id="about" 
+      className="mt-20 px-[8%] hidden md:flex md:justify-right md:items-center"
+    >
+      {/* Coluna Esquerda - Imagens */}
+      <div className="md:w-[20%] md:flex md:flex-col md:gap-3 md:mr-[20px]">
+        <img 
+          className="md:w-[274px] md:h-[375px] object-cover rounded-[10px]" 
+          src={Image02} 
+          alt="Imagem 2" 
+        />
+        <img 
+          className="md:w-[274px] md:h-[375px] object-cover rounded-[10px]" 
+          src={Image03} 
+          alt="Imagem 3" 
+        />
       </div>
-      <div className="w-[20%] flex flex-col mr-[25px]">
-      <img className="w-[274px] h-[476px] object-cover rounded-[10px]" src={Image01} alt="Imagem 1" />
+      
+      {/* Coluna Central - Imagem Principal */}
+      <div className="md:w-[20%] md:flex md:flex-col md:mr-[25px]">
+        <img 
+          className="md:w-[274px] md:h-[476px] object-cover rounded-[10px]" 
+          src={Image01} 
+          alt="Imagem 1" 
+        />
       </div>
 
-      <div className="w-[45%] text-left">
+      {/* Coluna Direita - Texto */}
+      <div className="md:w-[45%] md:text-left">
         <h2 className="font-bold text-4xl text-secondary-01 mb-5">
           About Us
         </h2>
@@ -31,7 +50,7 @@ const About = () => {
           future.
         </p>
 
-        <div className="flex gap-4 mt-6">
+        <div className="md:flex md:gap-4 mt-6">
           <a href="#" className="text-purple-500 hover:text-purple-700">LinkedIn</a>
           <a href="#" className="text-purple-500 hover:text-purple-700">Email</a>
           <a href="#" className="text-purple-500 hover:text-purple-700">Instagram</a>
