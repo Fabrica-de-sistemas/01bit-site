@@ -6,11 +6,13 @@ import { TrendingUp } from 'react-feather';
 const Services = () => {
   return (
     <>
-      <section id="services-desktop" className="mt-20 mx-[10%] flex flex-col items-center gap-10 md:block hidden">
+      <section id="services" className="mt-20 mx-auto px-5 flex flex-col items-center gap-10">
         <h2 className="text-center font-bold text-[28px] text-secondary-01">
           Our Services
         </h2>
-        <section className="flex flex-row gap-[100px]">
+        <section
+          className="flex flex-wrap justify-center gap-5 sm:gap-10 lg:gap-20"
+        >
           <Card
             icon={
               <Figma
@@ -21,7 +23,7 @@ const Services = () => {
             }
             title={'UX/UI + Front-End'}
             description={'Experiences that bring ideas to life.'}
-            className="hover:translate-y-[10px] transition-transform duration-200"
+            className="hover:translate-y-[10px] transition-transform duration-200 w-full sm:w-[45%] lg:w-[30%]"
           />
           <Card
             icon={
@@ -33,59 +35,23 @@ const Services = () => {
             }
             title={'Back End'}
             description={'Security and scale for your project.'}
-            className="hover:translate-y-[10px] transition-transform duration-200" 
+            className="hover:translate-y-[10px] transition-transform duration-200 w-full sm:w-[45%] lg:w-[30%]"
           />
           <Card
             icon={
               <TrendingUp
-                size={120} 
+                size={120}
                 strokeWidth={1.5}
                 className="text-primary-01"
               />
             }
             title={'Infrastructure'}
             description={'Secure connections for growth.'}
-            className="hover:translate-y-[10px] transition-transform duration-200"
+            className="hover:translate-y-[10px] transition-transform duration-200 w-full sm:w-[45%] lg:w-[30%]"
           />
         </section>
       </section>
 
-      <section id="services" className="mt-20 mx-10 flex flex-col items-center gap-10 md:hidden">
-        <h2 className="text-center font-bold text-[28px] text-secondary-01">
-          Our Services
-        </h2>
-        <section className="flex flex-col gap-[10px]">
-          <Card
-            icon={
-              <Figma size={50} strokeWidth={1.5} className="text-primary-01 " />
-            }
-            title={'UX/UI + Front-End'}
-            description={'Experiences that bring ideas to life.'}
-          />
-          <Card
-            icon={
-              <Database
-                size={50}
-                strokeWidth={1.5}
-                className="text-primary-01 "
-              />
-            }
-            title={'Back End'}
-            description={'Security and scale for your project.'}
-          />
-          <Card
-            icon={
-              <TrendingUp
-                size={50}
-                strokeWidth={1.5}
-                className="text-primary-01 "
-              />
-            }
-            title={'Infrastructure'}
-            description={'Secure connections for growth.'}
-          />
-        </section>
-      </section>
     </>
   );
 };
