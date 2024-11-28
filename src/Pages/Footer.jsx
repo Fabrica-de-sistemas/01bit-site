@@ -18,4 +18,4 @@ const Footer = () => {
 };
 
 export default Footer;
->>>>>>> feature/desktop-version
+
