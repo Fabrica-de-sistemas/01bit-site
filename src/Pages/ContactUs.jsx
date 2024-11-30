@@ -2,11 +2,8 @@ import { MapPin, Mail, Phone, Linkedin, Instagram } from 'react-feather';
 
 const ContactUs = () => {
   return (
-    <>
-      <section
-        id="contact"
-        className="grid lg:hidden mt-20 screen320px:w-[301px] screen414px:w-[361px] mx-auto bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 screen414px:px-[30px]"
-      >
+    <div id="contact">
+      <section className="grid lg:hidden mt-20 screen320px:w-[301px] screen414px:w-[361px] mx-auto bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 screen414px:px-[30px]">
         <h2 className="text-center font-bold text-[28px] text-secondary-01 mb-8">
           Send a message
         </h2>
@@ -46,10 +43,7 @@ const ContactUs = () => {
         </form>
       </section>
 
-      <section
-        id="contact"
-        className="hidden lg:flex flex-col lg:flex-row mt-20 mx-auto w-full  lg:w-[900px] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 px-5 lg:px-10 gap-10 lg:h-[500px] lg:gap-10 relative"
-      >
+      <section className="hidden lg:flex flex-col lg:flex-row mt-20 mx-auto w-full lg:w-[900px] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 px-5 lg:px-10 gap-10 lg:h-[500px] lg:gap-10 relative">
         <div className="w-full lg:w-[48%] bg-primary-03 text-grayColors-01 rounded-3xl px-8 py-20 flex flex-col absolute left-[-50px] top-7">
           <div className="grid gap-5">
             <h2 className="text-white text-[24px] font-bold">Contact Info</h2>
@@ -118,7 +112,7 @@ const ContactUs = () => {
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
