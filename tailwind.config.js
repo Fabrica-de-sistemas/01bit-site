@@ -25,9 +25,10 @@ export default {
         boxShadow: '4px 3px 10px 0px rgba(128, 128, 128, 0.50)',
       },
       screens: {
-        md: '768px', 
-        lg: '1024px',
-        xl: '1280px',
+        md840px: '840px',
+        screen320px: '320px',
+        screen414px: '414px',
+        screen360px: '360px',
       },
     },
   },
