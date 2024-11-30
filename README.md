@@ -1,8 +1,24 @@
-# React + Vite
+## 📄 About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do projeto 01-bit! 🚀
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido com o objetivo de criar soluções digitais acessíveis e intuitivas, voltadas para pequenas empresas e empreendedores que desejam iniciar ou expandir sua presença no mundo digital. O foco está em entregar interfaces modernas, funcionais e fáceis de usar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## 🔨 Tools
+
+- [React](https://reactnative.dev/docs/getting-started)
+- [JavaScript (ES6+)](https://www.typescriptlang.org/pt/docs/)
+- [TailwindCSS](https://v2.tailwindcss.com/docs)
+
+
+
+
+
+## 📷 Project images
+![image](https://github.com/user-attachments/assets/5ef4581f-7a8b-4f0f-a942-1547e12221a6) 
+
+![image](https://github.com/user-attachments/assets/01b5c9cf-80ac-4cf3-9a65-16dc39c975d5)
+
+
+
