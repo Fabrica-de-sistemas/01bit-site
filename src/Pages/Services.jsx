@@ -11,11 +11,10 @@ const Services = () => {
     >
       <div>
         <h2 className="text-center font-bold text-[28px] text-secondary-01">
-          Our Services
+          Nossos Serviços
         </h2>
         <p className="hidden md:flex text-base text-secondary-02">
-          We provide end-to-end solutions for every stage of digital
-          development.
+        Fornecemos soluções completas para todas as etapas do desenvolvimento digital.
         </p>
       </div>
       <section className="flex flex-col gap-[10px] md:flex-row md:flex-wrap md:gap-6 ">
@@ -24,7 +23,7 @@ const Services = () => {
             <Figma size={50} strokeWidth={1.5} className="text-primary-01 " />
           }
           title={'UX/UI + Front-End'}
-          description={'Experiences that bring ideas to life.'}
+          description={'Experiências que transformam ideias em realidade.'}
         />
         <Card
           icon={
@@ -35,7 +34,7 @@ const Services = () => {
             />
           }
           title={'Back End'}
-          description={'Security and scale for your project.'}
+          description={'Segurança e escalabilidade para o seu projeto.'}
         />
         <Card
           icon={
@@ -45,8 +44,8 @@ const Services = () => {
               className="text-primary-01 "
             />
           }
-          title={'Infrastructure'}
-          description={'Secure connections for growth.'}
+          title={'Infraestrutura'}
+          description={'Conexões seguras para o crescimento.'}
         />
       </section>
     </section>

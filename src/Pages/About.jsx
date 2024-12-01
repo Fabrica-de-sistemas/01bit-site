@@ -54,20 +54,19 @@ const About = () => {
       </div>
       <div>
         <h2 className="text-left font-bold text-[28px] text-secondary-01 mb-5">
-          About Us
+          Sobre Nós
         </h2>
         <p className="text-left font-normal text-[13px] leading-6 text-secondary-01">
-          At 01-bit, we are passionate about turning ideas into unique digital
-          solutions. Our team of experts works closely with you to design,
-          develop, and implement tailored solutions that make a difference. With
-          an innovative and creative approach, we are involved in every step —
-          from user experience design to front-end and back-end development, all
-          the way to infrastructure.
+        Na 01-bit, somos apaixonados por transformar ideias em soluções digitais únicas. 
+        Nossa equipe de especialistas trabalha de perto com você para projetar, 
+        desenvolver e implementar soluções personalizadas que fazem a diferença. 
+        Com uma abordagem inovadora e criativa, estamos envolvidos em cada etapa — 
+        desde o design de experiência do usuário até o desenvolvimento front-end e back-end, 
+        passando pela infraestrutura.
         </p>
         <p className="text-left font-normal text-[13px] leading-6 text-secondary-01 mt-3">
-          We are committed to bringing your vision to the next level, merging
-          cutting-edge technology with creativity to create an impactful digital
-          future.
+        Estamos comprometidos em levar sua visão ao próximo nível, 
+        combinando tecnologia de ponta com criatividade para criar um futuro digital impactante.
         </p>
         <div className="flex items-center justify-start gap-2 mt-5">
           <Linkedin
