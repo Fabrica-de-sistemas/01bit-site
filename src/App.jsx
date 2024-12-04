@@ -6,6 +6,7 @@ import Footer from './Pages/Footer';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import Services from './Pages/Services';
+
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 

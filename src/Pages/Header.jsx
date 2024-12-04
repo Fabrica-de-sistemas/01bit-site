@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import LogoDesktop from '../assets/desktop/logo.svg';
 import LogoMobile from '../assets/mobile/logo/logo.svg';
-import { Menu } from 'react-feather';
+import { Menu, X } from 'react-feather';
 import { ArrowUpCircle } from 'react-feather';
 
 // Dicionário de traduções
@@ -23,6 +23,7 @@ const translations = {
 };
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
   const [language, setLanguage] = useState('pt');
   const menuRef = useRef(null);
@@ -40,118 +41,129 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  const handleCloseMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
-      <header className="md:hidden mt-5 mx-5 flex justify-between items-center relative">
-        <img src={LogoMobile} alt="Logo 01-bit" />
-        <input type="checkbox" className="hidden" name="check" id="menu" />
-        <label htmlFor="menu">
-          <Menu className="text-secondary-01 cursor-pointer" size={40} />
-        </label>
-        <ul
-          ref={menuRef}
-          className="flex flex-col items-center justify-center gap-6 absolute top-[100%] right-1 w-[80%] h-[353px] bg-otherColors-01 rounded-lg shadow-boxShadow z-50"
-        >
-          <li>
-            <a
-              className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
-              href="#home"
-            >
-              {translations[language].home}
+      <div className="bg-otherColors-01 w-full fixed top-0 left-0 right-0  z-50">
+        <div className="relative">
+          <header className="mt-0 pt-5 mx-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:pt-3 md:pb-2 md:mx-auto justify-between items-center bg-otherColors-01 ">
+            <a href="#" className="md:hidden">
+              <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
-          </li>
-          <li>
-            <a
-              className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
-              href="#about"
-            >
-              {translations[language].about}
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
-              href="#services"
-            >
-              {translations[language].services}
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
-              href="#projects"
-            >
-              {translations[language].projects}
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
-              href="#contact"
-            >
-              {translations[language].contact}
-            </a>
-          </li>
-        </ul>
-      </header>
 
-      <div className="hidden md:block bg-otherColors-01 w-full fixed top-0 left-0 right-0  z-10">
-        <header className="hidden md:flex w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] pt-3 pb-2 mx-auto justify-between items-center">
-          <a href="#">
-            <img
-              src={LogoDesktop}
-              alt="Logo 01-bit"
-              className="w-[118px] h-12"
-            />
-          </a>
-
-          <div className="flex items-center justify-between gap-8 xl:gap-32">
-            <nav className="flex items-center justify-center flex-grow">
-              <ul className="flex gap-5 lg:gap-10">
-                <li>
-                  <a
-                    href="#home"
-                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
-                  >
-                    {translations[language].home}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#about"
-                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
-                  >
-                    {translations[language].about}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
-                  >
-                    {translations[language].services}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#projects"
-                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
-                  >
-                    {translations[language].projects}
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-            <a
-              href="#contact"
-              className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium"
-            >
-              {translations[language].contact}
+            <span onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+              {isOpen ? (
+                <X className="text-secondary-01 cursor-pointer" size={40} />
+              ) : (
+                <Menu className="text-secondary-01 cursor-pointer" size={40} />
+              )}
+            </span>
+            <a href="#" className="hidden md:block">
+              <img
+                src={LogoDesktop}
+                alt="Logo 01-bit"
+                className="w-[118px] h-12"
+              />
             </a>
-          </div>
-        </header>
+            {/*navbar mobile */}
+            <ul
+              className={`md:hidden flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full h-[353px] bg-otherColors-01 z-[-1] transition-all duration-500 ease-in pl-5 pt-8  ${
+                isOpen ? 'flex' : 'hidden'
+              }`}
+            >
+              <li onClick={handleCloseMenu}>
+                <a
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  href="#home"
+                >
+                  {translations[language].home}
+                </a>
+              </li>
+              <li onClick={handleCloseMenu}>
+                <a
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  href="#about"
+                >
+                  {translations[language].about}
+                </a>
+              </li>
+              <li onClick={handleCloseMenu}>
+                <a
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  href="#services"
+                >
+                  {translations[language].services}
+                </a>
+              </li>
+              <li onClick={handleCloseMenu}>
+                <a
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  href="#projects"
+                >
+                  {translations[language].projects}
+                </a>
+              </li>
+              <li onClick={handleCloseMenu}>
+                <a
+                  className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center ml-[-3px]"
+                  href="#contact"
+                >
+                  {translations[language].contact}
+                </a>
+              </li>
+            </ul>
+
+            {/*navbar desktop */}
+            <div className="hidden md:flex items-center justify-between gap-8 xl:gap-32">
+              <nav className="flex items-center justify-center flex-grow">
+                <ul className="flex gap-5 lg:gap-10">
+                  <li>
+                    <a
+                      href="#home"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                    >
+                      {translations[language].home}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#about"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                    >
+                      {translations[language].about}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                    >
+                      {translations[language].services}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#projects"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                    >
+                      {translations[language].projects}
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <a
+                href="#contact"
+                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium"
+              >
+                {translations[language].contact}
+              </a>
+            </div>
+          </header>
+        </div>
       </div>
 
       {showScrollTopButton && (
