@@ -1,61 +1,80 @@
-import ImgProject from '../assets/desktop/Image.png';
+import { motion } from 'framer-motion';
+
+import Landing1 from '../assets/projects/landing1.jpg';
+import Landing3 from '../assets/projects/landing3.jpg';
+import Landing4 from '../assets/projects/landing4.jpg';
+import Landing5 from '../assets/projects/landing5.jpg';
+
 import { ChevronLeft } from 'react-feather';
 import { ChevronRight } from 'react-feather';
+import { useRef, useEffect, useState } from 'react';
+
+const images = [
+  Landing1,
+  Landing3,
+  Landing5,
+  Landing3,
+  Landing4,
+  Landing1,
+  Landing5,
+  Landing4,
+];
 
 const Projects = () => {
+  const carrousel = useRef();
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(carrousel.current?.scrollWidth - carrousel.current?.offsetWidth);
+  }, [width]);
   return (
-    <section id="projects" className="mt-20 bg-secondary-03 py-10 lg:py-20">
-      <h2 className="text-center font-bold text-[28px] text-grayColors-01 mb-8">
-        Nossos Projetos
+    <section
+      id="projects"
+      className="mt-20 bg-secondary-03 py-10 lg:py-20 relative"
+    >
+      <h2 className="max-w-[460px] mx-auto text-wrap text-center font-bold text-[24px] md:text-[28px] text-grayColors-01 mb-8 px-2">
+        Conheça alguns projetos realizados{' '}
+        <span className="text-primary-02">pela 01-bit</span>
       </h2>
+
       <div className="max-w-[500px] lg:max-w-[900px] mx-auto lg:flex lg:flex-row-reverse lg:items-center lg:justify-center">
-        <ChevronRight
-          size={90}
-          strokeWidth={3.5}
-          className="hidden lg:flex ml-11 text-grayColors-01 cursor-pointer"
-        />
         <div className="flex flex-col items-center justify-center mb-7 mx-10 lg:mx-0">
-          <img
-            src={ImgProject}
-            className="w-[295px] h-[280px] lg:w-[997px] lg:h-[569px] mx-auto mb-3 flex-1"
-            alt="project"
-          />
-          <div className="flex lg:hidden gap-1 items-center justify-center">
-            <span className="rounded-full bg-primary-02 w-3 h-3"></span>
-            <span className="rounded-full bg-grayColors-01 w-2 h-2"></span>
-            <span className="rounded-full bg-grayColors-01 w-2 h-2"></span>
-          </div>
-        </div>
-        <div className=" w-[300px] lg:w-[600px] mx-auto lg:mx-0 flex items-center justify-center text-grayColors-01 text-left gap-2 lg:flex-col lg:items-start">
-          <div>
-            <h4 className="font-bold text-base mb-1">E-commerce</h4>
-            <p className="font-normal text-[10px] mb-2 w-[28ch]">
-              Uma plataforma intuitiva e integrada para uma envolvente e completa
-              experiência de shopping.
-            </p>
-            <h4 className="font-bold text-base mb-1">Technologies Used</h4>
-            <p className="font-normal text-[10px] mb-2 w-[25ch]">
-              Figma | React | Tailwind CSS | Node.js | Express | MongoDB
-            </p>
-          </div>
-          <div>
-            <span className="block font-bold text-xs text-nowrap ">
-              Visitar o projeto
-            </span>
-            <a
-              href="#"
-              className="font-normal text-[10px] mb-1 text-primary-02 underline "
+          <div className="w-full mx-auto max-w-[900px]">
+            <motion.div
+              className="cursor-grab overflow-hidden"
+              whileTap={{ cursor: 'grabbing' }}
+              ref={carrousel}
             >
-              Ver site
-            </a>
+              <motion.div
+                className="flex gap-2"
+                drag="x"
+                dragConstraints={{ right: 0, left: -width }}
+              >
+                {images.map((image, index) => (
+                  <motion.div
+                    key={index}
+                    className="min-w-[270px]  md:min-w-[400px] md:min-h-[200px] cursor-pointer"
+                  >
+                    <img
+                      href="www.google.com"
+                      src={image}
+                      alt="texto alternativo"
+                      className="w-full h-[90%] rounded-xl pointer-events-none"
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-        <ChevronLeft
-          size={90}
-          strokeWidth={3.5}
-          className="hidden lg:flex mr-11 text-grayColors-01 cursor-pointer"
-        />
       </div>
+
+      <a
+        href="#contact"
+        className="flex  justify-self-center gap-2 bg-primary-01 py-4 px-14 text-otherColors-01 text-base rounded-3xl hover:bg-primary-03 font-normal"
+      >
+        Solicite um orçamento
+      </a>
     </section>
   );
 };

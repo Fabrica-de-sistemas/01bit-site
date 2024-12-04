@@ -18,6 +18,7 @@ export default {
       },
       otherColors: {
         '01': '#FFFFFF',
+        '02': '#E54545',
       },
     },
     extend: {

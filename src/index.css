@@ -6,7 +6,10 @@
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
-  input:checked ~ ul {
+  #menu:checked ~ ul {
     @apply flex;
+  }
+  #menu:not(:checked) ~ ul {
+    @apply hidden;
   }
 }

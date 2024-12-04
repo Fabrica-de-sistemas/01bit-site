@@ -57,33 +57,41 @@ const About = () => {
           Sobre Nós
         </h2>
         <p className="text-left font-normal text-[13px] leading-6 text-secondary-01">
-        Na 01-bit, somos apaixonados por transformar ideias em soluções digitais únicas. 
-        Nossa equipe de especialistas trabalha de perto com você para projetar, 
-        desenvolver e implementar soluções personalizadas que fazem a diferença. 
-        Com uma abordagem inovadora e criativa, estamos envolvidos em cada etapa — 
-        desde o design de experiência do usuário até o desenvolvimento front-end e back-end, 
-        passando pela infraestrutura.
+          Na 01-bit, somos apaixonados por transformar ideias em soluções
+          digitais únicas. Nossa equipe de especialistas trabalha de perto com
+          você para projetar, desenvolver e implementar soluções personalizadas
+          que fazem a diferença. Com uma abordagem inovadora e criativa, estamos
+          envolvidos em cada etapa — desde o design de experiência do usuário
+          até o desenvolvimento front-end e back-end, passando pela
+          infraestrutura.
         </p>
         <p className="text-left font-normal text-[13px] leading-6 text-secondary-01 mt-3">
-        Estamos comprometidos em levar sua visão ao próximo nível, 
-        combinando tecnologia de ponta com criatividade para criar um futuro digital impactante.
+          Estamos comprometidos em levar sua visão ao próximo nível, combinando
+          tecnologia de ponta com criatividade para criar um futuro digital
+          impactante.
         </p>
         <div className="flex items-center justify-start gap-2 mt-5">
-          <Linkedin
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02"
-          />
-          <Mail
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02"
-          />
-          <Instagram
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02"
-          />
+          <a href="">
+            <Linkedin
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01"
+            />
+          </a>
+          <a href="">
+            <Mail
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01"
+            />
+          </a>
+          <a href="">
+            <Instagram
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01"
+            />
+          </a>
         </div>
       </div>
     </section>

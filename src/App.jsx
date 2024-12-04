@@ -8,6 +8,7 @@ import Projects from './Pages/Projects';
 import Services from './Pages/Services';
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   useEffect(() => {
     // Função para verificar largura da tela
     const handleResize = () => {
@@ -22,8 +23,6 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []); // Apenas uma vez, ao montar
-
-  console.log(isMobile);
 
   return (
     <>
