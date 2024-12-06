@@ -49,12 +49,17 @@ const Header = () => {
     <>
       <div className="bg-otherColors-01 w-full fixed top-0 left-0 right-0  z-50">
         <div className="relative">
-          <header className="mt-0 pt-5 mx-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:pt-3 md:pb-2 md:mx-auto justify-between items-center bg-otherColors-01 ">
+          <header className="mt-0 py-5 mx-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:pt-3 md:pb-2 md:mx-auto justify-between items-center bg-otherColors-01 ">
             <a href="#" className="md:hidden">
               <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
 
-            <span onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+            <span
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden"
+              aria-expanded={isOpen}
+              aria-controls="navigation_bar"
+            >
               {isOpen ? (
                 <X className="text-secondary-01 cursor-pointer" size={40} />
               ) : (
@@ -68,15 +73,18 @@ const Header = () => {
                 className="w-[118px] h-12"
               />
             </a>
+
             {/*navbar mobile */}
             <ul
-              className={`md:hidden flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full h-[353px] bg-otherColors-01 z-[-1] transition-all duration-500 ease-in pl-5 pt-8  ${
+              aria-hidden={!isOpen}
+              id="navigation_bar"
+              className={`md:hidden flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full  bg-otherColors-01 z-[-1] animate-fade-down animate-duration-[400ms] animate-delay-200 animate-ease-in-out pl-5 pt-8 transform-[-353px]  ${
                 isOpen ? 'flex' : 'hidden'
               }`}
             >
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
                   href="#home"
                 >
                   {translations[language].home}
@@ -84,7 +92,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
                   href="#about"
                 >
                   {translations[language].about}
@@ -92,7 +100,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
                   href="#services"
                 >
                   {translations[language].services}
@@ -100,7 +108,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
                   href="#projects"
                 >
                   {translations[language].projects}
@@ -108,7 +116,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center ml-[-3px]"
+                  className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center transition duration-300 ml-[-3px]"
                   href="#contact"
                 >
                   {translations[language].contact}
@@ -123,7 +131,7 @@ const Header = () => {
                   <li>
                     <a
                       href="#home"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
                     >
                       {translations[language].home}
                     </a>
@@ -131,7 +139,7 @@ const Header = () => {
                   <li>
                     <a
                       href="#about"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
                     >
                       {translations[language].about}
                     </a>
@@ -139,7 +147,7 @@ const Header = () => {
                   <li>
                     <a
                       href="#services"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
                     >
                       {translations[language].services}
                     </a>
@@ -147,7 +155,7 @@ const Header = () => {
                   <li>
                     <a
                       href="#projects"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer"
+                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
                     >
                       {translations[language].projects}
                     </a>
@@ -157,7 +165,7 @@ const Header = () => {
 
               <a
                 href="#contact"
-                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium"
+                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 cursor-pointer"
               >
                 {translations[language].contact}
               </a>
@@ -170,7 +178,8 @@ const Header = () => {
         <>
           <button
             onClick={scrollToTop}
-            className="fixed bottom-5 right-5 bg-primary-02 text-white p-3 rounded-full shadow-lg hover:bg-primary-03 transition duration-300 flex items-center justify-center z-10"
+            className="fixed 
+            aria-label=bottom-5 right-5 bg-primary-02 text-white p-3 rounded-full shadow-lg hover:bg-primary-03 transition duration-300 flex items-center justify-center z-10"
             title="Go to top"
           >
             <ArrowUpCircle size={32} className="text-otherColors-01" />

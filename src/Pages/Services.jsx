@@ -14,39 +14,46 @@ const Services = () => {
           Nossos Serviços
         </h2>
         <p className="hidden md:flex text-base text-secondary-02">
-        Fornecemos soluções completas para todas as etapas do desenvolvimento digital.
+          Fornecemos soluções completas para todas as etapas do desenvolvimento
+          digital.
         </p>
       </div>
-      <section className="flex flex-col gap-[10px] md:flex-row md:flex-wrap md:gap-6 ">
-        <Card
-          icon={
-            <Figma size={50} strokeWidth={1.5} className="text-primary-01 " />
-          }
-          title={'UX/UI + Front-End'}
-          description={'Experiências que transformam ideias em realidade.'}
-        />
-        <Card
-          icon={
-            <Database
-              size={50}
-              strokeWidth={1.5}
-              className="text-primary-01 "
-            />
-          }
-          title={'Back End'}
-          description={'Segurança e escalabilidade para o seu projeto.'}
-        />
-        <Card
-          icon={
-            <TrendingUp
-              size={50}
-              strokeWidth={1.5}
-              className="text-primary-01 "
-            />
-          }
-          title={'Infraestrutura'}
-          description={'Conexões seguras para o crescimento.'}
-        />
+      <section className="flex flex-col gap-[10px] md:flex-row items-center justify-center md:flex-wrap md:gap-6 ">
+        <div className="animate-jump-in animate-duration-[700ms] animate-delay-[800ms] animate-ease-linear">
+          <Card
+            icon={
+              <Figma size={50} strokeWidth={1.5} className="text-primary-01 " />
+            }
+            title={'UX/UI + Front-End'}
+            description={'Experiências que transformam ideias em realidade.'}
+          />
+        </div>
+        <div className="animate-jump-in animate-duration-[900ms] animate-delay-[800ms] animate-ease-linear">
+          <Card
+            icon={
+              <Database
+                size={50}
+                strokeWidth={1.5}
+                className="text-primary-01 "
+              />
+            }
+            title={'Back End'}
+            description={'Segurança e escalabilidade para o seu projeto.'}
+          />
+        </div>
+        <div className="animate-jump-in animate-duration-[1010ms] animate-delay-[800ms] animate-ease-linear">
+          <Card
+            icon={
+              <TrendingUp
+                size={50}
+                strokeWidth={1.5}
+                className="text-primary-01 "
+              />
+            }
+            title={'Infraestrutura'}
+            description={'Conexões seguras para o crescimento.'}
+          />
+        </div>
       </section>
     </section>
   );

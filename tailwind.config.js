@@ -10,7 +10,7 @@ export default {
       },
       secondary: {
         '01': '#222222',
-        '02': '#808080',
+        '02': '#555555',
         '03': '#0D0D0D',
       },
       grayColors: {
@@ -33,5 +33,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animated')],
 };

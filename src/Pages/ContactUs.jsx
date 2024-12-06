@@ -1,13 +1,17 @@
+import { useEffect } from 'react';
 import { MapPin, Mail, Phone, Linkedin, Instagram } from 'react-feather';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollReveal from 'scrollreveal';
+
 const ContactUs = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
+    trigger,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -15,6 +19,20 @@ const ContactUs = () => {
     reset();
     toast.success('Formulário enviado com sucesso!');
   };
+
+  useEffect(() => {
+    const config = {
+      origin: 'bottom',
+      duration: 1000,
+      delay: 150,
+      distance: '500px',
+      scale: 1,
+      easing: 'ease',
+    };
+
+    // Aplicando ScrollReveal no elemento
+    ScrollReveal().reveal(document.querySelector('#contact'), config);
+  }, []);
 
   return (
     <>
@@ -79,6 +97,7 @@ const ContactUs = () => {
                         message: 'O nome deve conter apenas letras.',
                       },
                     })}
+                    onBlur={() => trigger('firstName')}
                   />
                   {errors?.firstName && (
                     <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
@@ -102,6 +121,7 @@ const ContactUs = () => {
                         message: 'O nome deve conter apenas letras.',
                       },
                     })}
+                    onBlur={() => trigger('lastName')}
                   />
                   {errors?.lastName && (
                     <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
@@ -124,6 +144,7 @@ const ContactUs = () => {
                         message: 'Formato de email inválido.',
                       },
                     })}
+                    onBlur={() => trigger('email')}
                   />
                   {errors?.email && (
                     <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
@@ -143,6 +164,7 @@ const ContactUs = () => {
                         message: 'Apenas números são permitidos.',
                       },
                     })}
+                    onBlur={() => trigger('tel')}
                   />
                   {errors?.tel && (
                     <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
@@ -163,6 +185,7 @@ const ContactUs = () => {
                       message: 'A mensagem deve ter pelo menos 10 caracteres.',
                     },
                   })}
+                  onBlur={() => trigger('message')}
                 />
                 {errors?.message && (
                   <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
