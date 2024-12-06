@@ -3,9 +3,9 @@ import Image02Mobile from '../assets/mobile/images/image_2.png';
 import Image03Mobile from '../assets/mobile/images/image_3.png';
 
 
-import Image01Desktop from '../assets/desktop/Image01.png';
-import Image02Desktop from '../assets/desktop/Image02.png';
-import Image03Desktop from '../assets/desktop/Image03.png';
+import Image01Desktop from '../assets/desktop/Image01.webp';
+import Image02Desktop from '../assets/desktop/Image02.webp';
+import Image03Desktop from '../assets/desktop/Image03.webp';
 import { EmailButtonLink, InstagramButtonLink, LinkedinButtonLink } from '../Components/SocialMedias';
 
 const About = () => {

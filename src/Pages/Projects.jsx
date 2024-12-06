@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
-import Landing1 from '../assets/projects/landing1.jpg';
-import Landing3 from '../assets/projects/landing3.jpg';
-import Landing4 from '../assets/projects/landing4.jpg';
-import Landing5 from '../assets/projects/landing5.jpg';
+import Landing1 from '../assets/projects/landing1.webp';
+import Landing3 from '../assets/projects/landing3.webp';
+import Landing4 from '../assets/projects/landing4.webp';
+import Landing5 from '../assets/projects/landing5.webp';
 
 import { ChevronLeft } from 'react-feather';
 import { ChevronRight } from 'react-feather';
