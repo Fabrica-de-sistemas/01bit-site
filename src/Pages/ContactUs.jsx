@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { MapPin, Mail, Phone, Linkedin, Instagram } from 'react-feather';
+import { MapPin, Mail, Phone, } from 'react-feather';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollReveal from 'scrollreveal';
+import { EmailButtonLink, InstagramButtonLink, LinkedinButtonLink } from '../Components/SocialMedias';
 
 const ContactUs = () => {
   const {
@@ -44,31 +45,29 @@ const ContactUs = () => {
               <h2 className="text-white text-[24px] font-bold">
                 Informações de Contato
               </h2>
-              <div className="flex flex-col gap-4 text-white">
+              <address className="flex flex-col gap-4 text-white">
                 <div className="flex items-center gap-4">
                   <MapPin className="text-primary-02" />
-                  <p className="font-light">Av ali na esquina, 15 - RJ</p>
+                  <span className="font-light">Av ali na esquina, 15 - RJ</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="text-primary-02" />
-                  <p className="font-light">bit01@contact.com</p>
+                  <a href='mailto:bit01@contact.com' className="font-light">bit01@contact.com</a>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="text-primary-02" />
-                  <p className="font-light">+55 3333 3333</p>
+                  <a href='tel:+5533333333' className="font-light">+55 3333 3333</a>
                 </div>
-              </div>
+              </address>
             </div>
             <div className="flex gap-2 mt-24">
-              <a href="">
-                <Linkedin className="text-primary-02 hover:text-grayColors-01" />
-              </a>
-              <a href="">
-                <Instagram className="text-primary-02 hover:text-grayColors-01" />
-              </a>
-              <a href="">
-                <Mail className="text-primary-02 hover:text-grayColors-01" />
-              </a>
+              
+              <LinkedinButtonLink className="text-primary-02 hover:text-grayColors-01"/>
+              <InstagramButtonLink className="text-primary-02 hover:text-grayColors-01"/>
+              <EmailButtonLink className="text-primary-02 hover:text-grayColors-01"/>
+              
+              
+              
             </div>
           </div>
 
@@ -97,13 +96,15 @@ const ContactUs = () => {
                         message: 'O nome deve conter apenas letras.',
                       },
                     })}
-                    onBlur={() => trigger('firstName')}
+                    onChangeCapture={() => trigger('firstName')}
+                    onKeyUp={() => trigger('firstName')}
+                    aria-describedby='firstNameError'
                   />
-                  {errors?.firstName && (
-                    <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
-                      {errors.firstName.message}
+                  
+                    <p id='firstNameError' className="text-xs text-otherColors-02 text-left mt-1 font-light" aria-live="assertive">
+                      {errors?.firstName?.message}
                     </p>
-                  )}
+                  
                 </div>
                 <div>
                   <input
@@ -121,13 +122,14 @@ const ContactUs = () => {
                         message: 'O nome deve conter apenas letras.',
                       },
                     })}
-                    onBlur={() => trigger('lastName')}
+                    onChangeCapture={() => trigger('lastName')}
+                    onKeyUp={() => trigger('lastName')}
+                    aria-describedby='lastNameError'
                   />
-                  {errors?.lastName && (
-                    <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
-                      {errors.lastName.message}
+                  
+                    <p id='lastNameError' className="text-xs text-otherColors-02 text-left mt-1 font-light " aria-live="assertive">
+                      {errors?.lastName?.message || ""}
                     </p>
-                  )}
                 </div>
               </div>
 
@@ -144,13 +146,16 @@ const ContactUs = () => {
                         message: 'Formato de email inválido.',
                       },
                     })}
-                    onBlur={() => trigger('email')}
+                    onChangeCapture={() => trigger('email')}
+                    onKeyUp={() => trigger('email')}
+                    aria-describedby='emailError'
                   />
-                  {errors?.email && (
-                    <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
-                      {errors.email.message}
+                  
+                    <p id='emailError' className="text-xs text-otherColors-02 text-left mt-1 font-light " aria-live="assertive">
+                      {errors?.email?.message || ""}
+                      
                     </p>
-                  )}
+                  
                 </div>
                 <div>
                   <input
@@ -164,13 +169,15 @@ const ContactUs = () => {
                         message: 'Apenas números são permitidos.',
                       },
                     })}
-                    onBlur={() => trigger('tel')}
+                    onChangeCapture={() => trigger('tel')}
+                    onKeyUp={() => trigger('tel')}
+                    aria-describedby='telError'
                   />
-                  {errors?.tel && (
-                    <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
-                      {errors.tel.message}
+                  
+                    <p id='telError' className="text-xs text-otherColors-02 text-left mt-1 font-light " aria-live="assertive">
+                      {errors?.tel?.message || ""}
                     </p>
-                  )}
+                  
                 </div>
               </div>
 
@@ -185,16 +192,18 @@ const ContactUs = () => {
                       message: 'A mensagem deve ter pelo menos 10 caracteres.',
                     },
                   })}
-                  onBlur={() => trigger('message')}
+                  onChangeCapture={() => trigger('message')}
+                  onKeyUp={() => trigger('message')}
+                  aria-describedby='messageError'
                 />
                 {errors?.message && (
-                  <p className="text-xs text-otherColors-02 text-left mt-1 font-light ">
-                    {errors.message.message}
+                  <p id='messageError' className="text-xs text-otherColors-02 text-left mt-1 font-light" aria-live="assertive">
+                    {errors?.message?.message || ""}
                   </p>
                 )}
               </div>
 
-              <button className="w-full lg:w-[40%] bg-primary-03 py-[10px] px-4 text-center rounded-3xl text-grayColors-01 mx-auto lg:mx-0">
+              <button type='submit' className="w-full lg:w-[40%] bg-primary-03 py-[10px] px-4 text-center rounded-3xl text-grayColors-01 mx-auto lg:mx-0">
                 Enviar
               </button>
             </form>

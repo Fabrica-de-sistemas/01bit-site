@@ -10,7 +10,7 @@ const Home = () => {
       className="mt-28 mx-10 flex flex-col justify-center items-center gap-3 md:flex-row md:justify-between"
     >
       <div className="w-[164px] mb-5 md:hidden">
-        <img src={RobotMobile} alt="Imagem do robô" />
+        <img src={RobotMobile} alt="Robô mascote" />
       </div>
       <div className="flex items-center justify-center gap-10 xl:gap-56 md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto">
         <div className="grid justify-center items-center text-center md:text-left md:content-center md:justify-items-start md:mt-8 animate-fade-right animate-duration-[900ms] animate-delay-200 animate-ease-in-out">
@@ -28,6 +28,7 @@ const Home = () => {
           >
             Solicite um orçamento
             <motion.span
+              aria-hidden
               animate={{ y: [0, 3, 0] }}
               initial={{ y: 0 }}
               transition={{
@@ -36,7 +37,7 @@ const Home = () => {
                 repeatType: 'loop',
               }}
             >
-              <ArrowDown
+              <ArrowDown aria-hidden
                 size={30}
                 strokeWidth={1.5}
                 className="hidden md:block text-otherColors-01 "
@@ -47,7 +48,7 @@ const Home = () => {
         <div className="hidden md:flex ">
           <img
             src={RobotDesktop}
-            alt="Imagem do robô"
+            alt="Robô mascote"
             className="h-full object-cover object-center animate-fade-left animate-duration-[900ms] animate-delay-200 animate-ease-in-out"
           />
         </div>

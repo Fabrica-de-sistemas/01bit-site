@@ -2,19 +2,13 @@ import Image01Mobile from '../assets/mobile/images/image_1.png';
 import Image02Mobile from '../assets/mobile/images/image_2.png';
 import Image03Mobile from '../assets/mobile/images/image_3.png';
 
-import { Linkedin } from 'react-feather';
-import { Mail } from 'react-feather';
-import { Instagram } from 'react-feather';
 
 import Image01Desktop from '../assets/desktop/Image01.png';
 import Image02Desktop from '../assets/desktop/Image02.png';
 import Image03Desktop from '../assets/desktop/Image03.png';
-import { useState } from 'react';
+import { EmailButtonLink, InstagramButtonLink, LinkedinButtonLink } from '../Components/SocialMedias';
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const aboutSection = document.querySelector('#about');
-
   return (
     <section
       id="about"
@@ -23,20 +17,13 @@ const About = () => {
       <div
         id="mobile"
         className="flex lg:hidden flex-row-reverse items-start gap-5"
+
       >
         <div>
-          <img
-            className="mb-5 animate-duration-[900ms] animate-delay-200 animate-ease-in-out"
-            src={Image01Mobile}
-            alt="Perfil image"
-          />
-          <img
-            src={Image03Mobile}
-            alt="Perfil image"
-            className="animate-fade-up animate-duration-[900ms] animate-delay-200 animate-ease-in-out"
-          />
+          <img className="mb-5" src={Image01Mobile} alt="Perfil image" />
+          <img src={Image03Mobile} alt="Perfil image" />
         </div>
-        <div className="self-center animate-fade-down animate-duration-[900ms] animate-delay-200 animate-ease-in-out">
+        <div className="self-center">
           <img src={Image02Mobile} alt="Perfil image" />
         </div>
       </div>
@@ -46,17 +33,17 @@ const About = () => {
       >
         <div>
           <img
-            className="mb-5 rounded-3xl max-w-[234px] h-[335px] animate-fade-down animate-duration-[900ms] animate-delay-200 animate-ease-in-out"
+            className="mb-5 rounded-3xl max-w-[234px] h-[335px]"
             src={Image02Desktop}
             alt="Perfil image"
           />
           <img
-            className="rounded-3xl max-w-[234px] h-[335px] animate-fade-up animate-duration-[900ms] animate-delay-200 animate-ease-in-out"
+            className="rounded-3xl max-w-[234px] h-[335px]"
             src={Image03Desktop}
             alt="Perfil image"
           />
         </div>
-        <div className="self-start mt-28 animate-fade-up animate-duration-[900ms] animate-delay-200 animate-ease-in-out">
+        <div className="self-start mt-28">
           <img
             className="rounded-3xl max-w-[234px] h-[436px]"
             src={Image01Desktop}
@@ -83,27 +70,25 @@ const About = () => {
           impactante.
         </p>
         <div className="flex items-center justify-start gap-2 mt-5">
-          <a href="">
-            <Linkedin
+          
+            <LinkedinButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01"
             />
-          </a>
-          <a href="">
-            <Mail
+          
+            <EmailButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01"
             />
-          </a>
-          <a href="">
-            <Instagram
+                    
+            <InstagramButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01"
             />
-          </a>
+          
         </div>
       </div>
     </section>

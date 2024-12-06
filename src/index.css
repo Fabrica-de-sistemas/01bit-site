@@ -6,6 +6,9 @@
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
+  li{
+    list-style-type: none;
+  }
   #menu:checked ~ ul {
     @apply flex;
   }

@@ -3,6 +3,8 @@ import LogoDesktop from '../assets/desktop/logo.svg';
 import LogoMobile from '../assets/mobile/logo/logo.svg';
 import { Menu, X } from 'react-feather';
 import { ArrowUpCircle } from 'react-feather';
+import { Tooltip } from '@mui/material';
+import BurguerMenu from '../Components/BurguerMenu';
 
 // Dicionário de traduções
 const translations = {
@@ -49,23 +51,15 @@ const Header = () => {
     <>
       <div className="bg-otherColors-01 w-full fixed top-0 left-0 right-0  z-50">
         <div className="relative">
-          <header className="mt-0 py-5 mx-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:pt-3 md:pb-2 md:mx-auto justify-between items-center bg-otherColors-01 ">
+          <header className="mt-0 p-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center bg-otherColors-01 ">
             <a href="#" className="md:hidden">
               <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
 
-            <span
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden"
+            <BurguerMenu onClick={() => setIsOpen(!isOpen)}
+              className={"md:hidden " + (isOpen ? "active" : "")} 
               aria-expanded={isOpen}
-              aria-controls="navigation_bar"
-            >
-              {isOpen ? (
-                <X className="text-secondary-01 cursor-pointer" size={40} />
-              ) : (
-                <Menu className="text-secondary-01 cursor-pointer" size={40} />
-              )}
-            </span>
+              aria-controls="navigation_bar" /> 
             <a href="#" className="hidden md:block">
               <img
                 src={LogoDesktop}
@@ -75,11 +69,11 @@ const Header = () => {
             </a>
 
             {/*navbar mobile */}
-            <ul
+            <nav
               aria-hidden={!isOpen}
-              id="navigation_bar"
-              className={`md:hidden flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full  bg-otherColors-01 z-[-1] animate-fade-down animate-duration-[400ms] animate-delay-200 animate-ease-in-out pl-5 pt-8 transform-[-353px]  ${
-                isOpen ? 'flex' : 'hidden'
+              
+              className={`md:hidden flex flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms]  bg-otherColors-01 z-[-1] pl-5 ${
+                isOpen ? '-translate-y-0' : '-translate-y-[353px]'
               }`}
             >
               <li onClick={handleCloseMenu}>
@@ -122,7 +116,7 @@ const Header = () => {
                   {translations[language].contact}
                 </a>
               </li>
-            </ul>
+            </nav>
 
             {/*navbar desktop */}
             <div className="hidden md:flex items-center justify-between gap-8 xl:gap-32">
@@ -175,16 +169,15 @@ const Header = () => {
       </div>
 
       {showScrollTopButton && (
-        <>
+        <Tooltip title='Ir para o topo' arrow placement='left'>
           <button
             onClick={scrollToTop}
             className="fixed 
-            aria-label=bottom-5 right-5 bg-primary-02 text-white p-3 rounded-full shadow-lg hover:bg-primary-03 transition duration-300 flex items-center justify-center z-10"
-            title="Go to top"
+            bottom-5 right-5 bg-primary-02 text-white p-3 rounded-full shadow-lg hover:bg-primary-03 transition duration-300 flex items-center justify-center z-10"
           >
             <ArrowUpCircle size={32} className="text-otherColors-01" />
           </button>
-        </>
+        </Tooltip>
       )}
     </>
   );

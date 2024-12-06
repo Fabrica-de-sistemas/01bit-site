@@ -22,7 +22,7 @@ const Services = () => {
         <div className="animate-jump-in animate-duration-[700ms] animate-delay-[800ms] animate-ease-linear">
           <Card
             icon={
-              <Figma size={50} strokeWidth={1.5} className="text-primary-01 " />
+              <Figma aria-hidden size={50} strokeWidth={1.5} className="text-primary-01 " />
             }
             title={'UX/UI + Front-End'}
             description={'Experiências que transformam ideias em realidade.'}
@@ -32,6 +32,8 @@ const Services = () => {
           <Card
             icon={
               <Database
+
+                aria-hidden
                 size={50}
                 strokeWidth={1.5}
                 className="text-primary-01 "
@@ -44,7 +46,7 @@ const Services = () => {
         <div className="animate-jump-in animate-duration-[1010ms] animate-delay-[800ms] animate-ease-linear">
           <Card
             icon={
-              <TrendingUp
+              <TrendingUp aria-hidden
                 size={50}
                 strokeWidth={1.5}
                 className="text-primary-01 "
