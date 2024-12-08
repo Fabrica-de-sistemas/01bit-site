@@ -23,7 +23,7 @@ function App() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Apenas uma vez, ao montar
+  }, []);
 
   return (
     <>

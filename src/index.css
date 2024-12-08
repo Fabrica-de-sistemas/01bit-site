@@ -6,7 +6,7 @@
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
-  li{
+  li {
     list-style-type: none;
   }
   #menu:checked ~ ul {
@@ -15,4 +15,23 @@
   #menu:not(:checked) ~ ul {
     @apply hidden;
   }
+
+  .scollBar::-webkit-scrollbar {
+    display: none;
+  }
+}
+@keyframes infinite-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-carousel {
+  animation: infinite-carousel 20s linear infinite;
+}
+.animate-infinite-carousel:hover {
+  animation-play-state: paused;
 }

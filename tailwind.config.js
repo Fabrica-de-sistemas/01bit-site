@@ -31,6 +31,9 @@ export default {
         screen414px: '414px',
         screen360px: '360px',
       },
+      gridAutoColumns: {
+        900: 'calc((100% / 3) - 12px)',
+      },
     },
   },
   plugins: [require('tailwindcss-animated')],

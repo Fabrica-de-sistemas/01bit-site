@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import LogoDesktop from '../assets/desktop/logo.svg';
+import { useState, useEffect } from 'react';
+import Logo from '../assets/imgs/logo.svg';
 import LogoMobile from '../assets/mobile/logo/logo.svg';
-import { Menu, X } from 'react-feather';
 import { ArrowUpCircle } from 'react-feather';
 import { Tooltip } from '@mui/material';
 import BurguerMenu from '../Components/BurguerMenu';
@@ -20,7 +19,7 @@ const translations = {
     about: 'Sobre',
     services: 'Serviços',
     projects: 'Projetos',
-    contact: 'Solicite um orçamento',
+    contact: 'Comece agora',
   },
 };
 
@@ -28,7 +27,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
   const [language, setLanguage] = useState('pt');
-  const menuRef = useRef(null);
+  // const menuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,35 +49,36 @@ const Header = () => {
   return (
     <>
       <div className="bg-otherColors-01 w-full fixed top-0 left-0 right-0  z-50">
-        <div className="relative">
-          <header className="mt-0 p-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center bg-otherColors-01 ">
-            <a href="#" className="md:hidden">
+        <section className="relative">
+          <header className="mt-0 px-3 md:px-5 md:py-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center bg-otherColors-01 ">
+            <a href="#" className="md:hidden select-none ml-[12px]">
               <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
 
-            <BurguerMenu onClick={() => setIsOpen(!isOpen)}
-              className={"md:hidden " + (isOpen ? "active" : "")} 
+            <BurguerMenu
+              onClick={() => setIsOpen(!isOpen)}
+              className={'md:hidden ' + (isOpen ? 'active' : '')}
               aria-expanded={isOpen}
-              aria-controls="navigation_bar" /> 
-            <a href="#" className="hidden md:block">
+              aria-controls="navigation_bar"
+            />
+            <a href="#" className="hidden md:flex select-none">
               <img
-                src={LogoDesktop}
+                src={Logo}
                 alt="Logo 01-bit"
-                className="w-[118px] h-12"
+                className="w-[119px] lg:w-[124px] h-12 lg:ml-[-20px]"
               />
             </a>
 
             {/*navbar mobile */}
             <nav
               aria-hidden={!isOpen}
-              
-              className={`md:hidden flex flex-col items-start justify-start gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms]  bg-otherColors-01 z-[-1] pl-5 ${
+              className={`md:hidden flex flex-col items-center justify-center gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms] bg-otherColors-01 z-[-1] pl-5 p-5 ${
                 isOpen ? '-translate-y-0' : '-translate-y-[353px]'
               }`}
             >
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#home"
                 >
                   {translations[language].home}
@@ -86,7 +86,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#about"
                 >
                   {translations[language].about}
@@ -94,7 +94,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#services"
                 >
                   {translations[language].services}
@@ -102,7 +102,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300"
+                  className="text-xl text-secondary-01 font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#projects"
                 >
                   {translations[language].projects}
@@ -110,7 +110,7 @@ const Header = () => {
               </li>
               <li onClick={handleCloseMenu}>
                 <a
-                  className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center transition duration-300 ml-[-3px]"
+                  className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center transition duration-300 select-none ml-[-3px]"
                   href="#contact"
                 >
                   {translations[language].contact}
@@ -119,57 +119,55 @@ const Header = () => {
             </nav>
 
             {/*navbar desktop */}
-            <div className="hidden md:flex items-center justify-between gap-8 xl:gap-32">
-              <nav className="flex items-center justify-center flex-grow">
-                <ul className="flex gap-5 lg:gap-10">
-                  <li>
-                    <a
-                      href="#home"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
-                    >
-                      {translations[language].home}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#about"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
-                    >
-                      {translations[language].about}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#services"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
-                    >
-                      {translations[language].services}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#projects"
-                      className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300"
-                    >
-                      {translations[language].projects}
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+            <nav className="hidden md:flex items-center justify-between gap-8 xl:gap-24 ">
+              <ul className="flex items-center justify-center flex-grow gap-5 lg:gap-11 ">
+                <li>
+                  <a
+                    href="#home"
+                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                  >
+                    {translations[language].home}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                  >
+                    {translations[language].about}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                  >
+                    {translations[language].services}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="text-lg text-secondary-01 font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                  >
+                    {translations[language].projects}
+                  </a>
+                </li>
+              </ul>
 
               <a
                 href="#contact"
-                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 cursor-pointer"
+                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
               >
                 {translations[language].contact}
               </a>
-            </div>
+            </nav>
           </header>
-        </div>
+        </section>
       </div>
 
       {showScrollTopButton && (
-        <Tooltip title='Ir para o topo' arrow placement='left'>
+        <Tooltip title="Ir para o topo" arrow placement="left">
           <button
             onClick={scrollToTop}
             className="fixed 

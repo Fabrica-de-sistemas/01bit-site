@@ -1,6 +1,6 @@
 const Card = ({ icon, title, description }) => {
   return (
-    <article className="flex flex-col justify-center items-center w-[250px] mx-auto bg-otherColors-01 shadow-boxShadow rounded-3xl py-8 px-8 gap-[15px]">
+    <article className="flex flex-col justify-center items-center w-[250px] mx-auto bg-otherColors-01 shadow-boxShadow rounded-3xl py-8 px-8 gap-[15px] select-none card">
       <div className="w-[90px] h-[90px] mx-auto rounded-full bg-grayColors-01 flex items-center justify-center">
         {icon}
       </div>
