@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class', // Habilitar o modo escuro com a classe 'dark' no HTML
   theme: {
     colors: {
       primary: {
@@ -19,6 +20,15 @@ export default {
       otherColors: {
         '01': '#FFFFFF',
         '02': '#E54545',
+      },
+      // Cores específicas para os modos claro e escuro
+      dark: {
+        background: '#000000',  // Fundo preto para o modo escuro
+        text: '#FFFFFF',  // Texto branco para o modo escuro
+      },
+      light: {
+        background: '#FFFFFF',  // Fundo branco para o modo claro
+        text: '#000000',  // Texto preto para o modo claro
       },
     },
     extend: {

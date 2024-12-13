@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import Card from '../Components/Card';
-import { Figma } from 'react-feather';
-import { Database } from 'react-feather';
-import { TrendingUp } from 'react-feather';
+import { Figma, Database, TrendingUp } from 'react-feather';
 import ScrollReveal from 'scrollreveal';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation(); 
+
   useEffect(() => {
     const cards = document.querySelectorAll('#services .card');
 
@@ -23,23 +24,23 @@ const Services = () => {
       ScrollReveal().reveal(card, config);
     });
   }, []);
+
   return (
     <section
       id="services"
       className="mt-20 mx-10 flex flex-col items-center gap-10"
     >
       <article>
-        <h2 className="text-center font-bold text-[28px] text-secondary-01 select-none">
-          Nossos Serviços
+        <h2 className="text-center font-bold text-[28px] text-black select-none">
+          {t('services.heading')}
         </h2>
-        <p className="hidden md:flex text-base text-secondary-02 select-none">
-          Fornecemos soluções completas para todas as etapas do desenvolvimento
-          digital.
+        <p className="hidden md:flex text-base text-black select-none">
+          {t('services.description')}
         </p>
       </article>
       <article
         id="cards"
-        className="flex flex-col gap-[10px] md:flex-row items-center justify-center md:flex-wrap md:gap-6 "
+        className="flex flex-col gap-[10px] md:flex-row items-center justify-center md:flex-wrap md:gap-6"
       >
         <Card
           icon={
@@ -47,13 +48,12 @@ const Services = () => {
               aria-hidden
               size={50}
               strokeWidth={1.5}
-              className="text-primary-01 select-none "
+              className="text-primary-01 select-none"
             />
           }
-          title={'UX/UI + Front-End'}
-          description={'Experiências que transformam ideias em realidade.'}
+          title={t('services.cards.card1.title')}
+          description={t('services.cards.card1.description')}
         />
-
         <Card
           icon={
             <Database
@@ -63,10 +63,9 @@ const Services = () => {
               className="text-primary-01 select-none"
             />
           }
-          title={'Back End'}
-          description={'Segurança e escalabilidade para o seu projeto.'}
+          title={t('services.cards.card2.title')}
+          description={t('services.cards.card2.description')}
         />
-
         <Card
           icon={
             <TrendingUp
@@ -76,8 +75,8 @@ const Services = () => {
               className="text-primary-01 select-none"
             />
           }
-          title={'Infraestrutura'}
-          description={'Conexões seguras para o crescimento.'}
+          title={t('services.cards.card3.title')}
+          description={t('services.cards.card3.description')}
         />
       </article>
     </section>

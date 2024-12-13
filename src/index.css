@@ -2,6 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Estilo do Header no Light Mode */
+header {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo do Header no Dark Mode */
+html.dark header {
+  background-color: black;
+  color: #ffffff;
+}
+
+/* Tema escuro */
+html.dark .burger-menu {
+  background-color: black; /* Fundo escuro */
+  color: #ffffff; /* Texto claro */
+  border: 1px solid #444444; /* Borda opcional */
+}
+
+/* Tema claro */
+.burger-menu {
+  background-color: white; /* Fundo claro */
+  color: #000000; /* Texto escuro */
+}
+
+html.dark nav{
+  background-color: black;
+  color: white;
+}
+
+/* Transição suave para alternância */
+.burger-menu {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Estilo padrão (Light Mode) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para Dark Mode */
+html.dark body {
+  background-color: #000000;
+  color: white
+}
+
+/* Estilo para o footer no tema escuro */
+html.dark footer {
+  background-color: #1a1a1a; /* Fundo escuro */
+  color: #f2f2f2; /* Texto claro */
+  border-top: 1px solid #333333; /* Borda superior opcional */
+}
+
+/* Estilo para o footer no tema claro */
+footer {
+  background-color: #ffffff; /* Fundo claro */
+  color: #000000; /* Texto escuro */
+  border-top: 1px solid #cccccc; /* Borda superior opcional */
+}
+
+/* Transição suave para alternância */
+footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;

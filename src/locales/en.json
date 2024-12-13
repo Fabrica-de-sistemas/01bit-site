@@ -1,0 +1,60 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "heading": "Transforming Ideas into Innovative Solutions",
+    "description_mobile": "We create smart and personalized software that connects creativity with cutting-edge technology.",
+    "description_desktop": "We create smart and personalized software that connects creativity with cutting-edge technology. From design to front-end, back-end, and infrastructure, we're here to take your vision to the next level. Join us in building the digital future.",
+    "cta": "Start your project now"
+  },
+  "about": {
+    "title": "About Us",
+    "paragraph1": "At 01-bit, we are passionate about transforming ideas into unique digital solutions. Our team of experts works closely with you to design, develop, and implement tailored solutions that make a difference. With an innovative and creative approach, we are involved in every step — from user experience design to front-end and back-end development, as well as infrastructure.",
+    "paragraph2": "We are committed to taking your vision to the next level, combining cutting-edge technology with creativity to create an impactful digital future."
+  },
+  "services": {
+    "heading": "Our Services",
+    "description": "We provide complete solutions for all stages of digital development.",
+    "cards": {
+      "card1": {
+        "title": "Building Beautiful Websites",
+        "description": "Experiences that turn ideas into reality."
+      },
+      "card2": {
+        "title": "Process Automation",
+        "description": "More convenience for complete solutions."
+      },
+      "card3": {
+        "title": "Bot Creation",
+        "description": "More efficiency to perform tasks."
+      }
+    }
+  },
+  "projects": {
+    "heading": "Discover some projects carried out by 01-bit",
+    "button": "Start your project now",
+    "altText": "Slide"
+  },
+  "contactUs": {
+    "title": "Let's start something amazing together!",
+    "subtitle": "Send us your message, and we will get back to you soon.",
+    "howToFindUs": "How to find us?",
+    "address": "Av. Ali na esquina, 15 - RJ",
+    "email": "bit01@contact.com",
+    "phone": "+55 3333 3333",
+    "messagePlaceholder": "Tell us more about your project or idea! We're here to help.",
+    "formLabels": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "tel": "Phone number"
+    },
+    "submitButton": "Send",
+    "successMessage": "Message sent successfully! We'll get back to you soon to discuss your project."
+  }
+}

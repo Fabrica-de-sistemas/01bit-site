@@ -1,0 +1,51 @@
+import Image01Mobile from '../assets/mobile/images/image_1.png';
+import Image02Mobile from '../assets/mobile/images/image_2.png';
+import Image03Mobile from '../assets/mobile/images/image_3.png';
+
+import Image01 from '../assets/imgs/Image01.webp';
+import Image02 from '../assets/imgs/Image02.webp';
+import Image03 from '../assets/imgs/Image03.webp';
+<div
+        id="mobile"
+        className="flex lg:hidden flex-row-reverse items-start gap-5"
+      >
+        <div>
+          <img
+            className="mb-5 select-none card fall"
+            src={Image01Mobile}
+            alt="Perfil image"
+          />
+          <img
+            className="select-none card rise"
+            src={Image03Mobile}
+            alt="Perfil image"
+          />
+        </div>
+        <div className="self-center select-none card rise">
+          <img src={Image02Mobile} alt="Perfil image" />
+        </div>
+      </div>
+      <div
+        id="desktop"
+        className="hidden lg:flex items-start justify-end gap-8"
+      >
+        <div>
+          <img
+            className="mb-5 rounded-3xl max-w-[234px] h-[335px] select-none card fall"
+            src={Image02}
+            alt="Perfil image"
+          />
+          <img
+            className="rounded-3xl max-w-[234px] h-[335px] select-none card rise"
+            src={Image03}
+            alt="Perfil image"
+          />
+        </div>
+        <div className="self-start mt-28 select-none card rise">
+          <img
+            className="rounded-3xl max-w-[234px] h-[436px]"
+            src={Image01}
+            alt="Perfil image"
+          />
+        </div>
+      </div>

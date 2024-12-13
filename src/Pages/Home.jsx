@@ -1,42 +1,33 @@
 import { motion } from 'framer-motion';
-import RobotMobile from '../assets/mobile/logo/Robot.svg';
-import Robot from '../assets/imgs/Robot.svg';
 import { ArrowDown } from 'react-feather';
 import { useEffect, useRef } from 'react';
 import ScrollReveal from 'scrollreveal';
+import { useTranslation } from 'react-i18next'; 
+import RobotMobile from '../assets/mobile/logo/Robot.svg';
+import Robot from '../assets/imgs/Robot.svg';
 
 const Home = () => {
+  const { t } = useTranslation();
   const homeRef = useRef(null);
+
   useEffect(() => {
-    const leftArticle = document.querySelectorAll('#home .left'); // Seleciona as Article que vêm da esquerda
-    const rightArticle = document.querySelectorAll('#home .right'); // Seleciona as Article que vêm da direita
+    const leftArticle = document.querySelectorAll('#home .left');
+    const rightArticle = document.querySelectorAll('#home .right');
 
     const baseConfig = {
       duration: 1000,
-      distance: '50px', // Distância do deslocamento
+      distance: '50px',
       scale: 1,
       easing: 'ease',
-      opacity: 0, // Começa invisível
+      opacity: 0,
     };
 
-    // Configurações para as Article que vêm da esquerda
     leftArticle.forEach((article) => {
-      const config = {
-        ...baseConfig,
-        origin: 'left', // Vem do lado esquerdo
-      };
-
-      ScrollReveal().reveal(article, config);
+      ScrollReveal().reveal(article, { ...baseConfig, origin: 'left' });
     });
 
-    // Configurações para as Article que vêm da direita
     rightArticle.forEach((article) => {
-      const config = {
-        ...baseConfig,
-        origin: 'right', // Vem do lado direito
-      };
-
-      ScrollReveal().reveal(article, config);
+      ScrollReveal().reveal(article, { ...baseConfig, origin: 'right' });
     });
   }, []);
 
@@ -50,25 +41,21 @@ const Home = () => {
       </div>
       <section className="flex items-center justify-center gap-10 xl:gap-56 md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto">
         <article className="grid justify-center items-center text-center md:text-left md:content-center md:justify-items-start md:mt-8 left">
-          <h1 className="text-3xl max-w-[380px] md:w-[800px] lg:max-w-[500px] mx-auto lg:text-4xl leading-8 lg:leading-[3rem] font-bold text-secondary-01  md:mx-0 mb-5 md:mb-8 select-none">
-            Transformando Ideias em Soluções Inovadoras
+          <h1 className="text-3xl max-w-[380px] md:w-[800px] lg:max-w-[500px] mx-auto lg:text-4xl leading-8 lg:leading-[3rem] font-bold text-black  md:mx-0 mb-5 md:mb-8 select-none">
+            {t('home.heading')}
           </h1>
-          <p className="text-[13px] md:hidden leading-6 font-normal text-secondary-01 max-w-[300px] mx-auto   mb-10 select-none">
-            Criamos software inteligente e personalizado que conecta
-            criatividade com tecnologia de ponta.
+          <p className="text-[13px] md:hidden leading-6 font-normal text-black max-w-[300px] mx-auto mb-10 select-none">
+            {t('home.description_mobile')}
           </p>
-          <p className=" hidden md:flex text-base lg:text-lg  leading-7 font-normal text-secondary-01  mx-auto max-w-[780px] lg:max-w-[680px] mb-12 select-none">
-            Criamos software inteligente e personalizado que conecta
-            criatividade com tecnologia de ponta. Do design ao front-end,
-            back-end e infraestrutura, estamos aqui para levar sua visão para o
-            próximo nível. Junte-se a nós na construção do futuro digital.
+          <p className="hidden md:flex text-base lg:text-lg leading-7 font-normal text-black mx-auto max-w-[780px] lg:max-w-[680px] mb-12 select-none">
+            {t('home.description_desktop')}
           </p>
 
           <a
             href="#contact"
             className="flex items-center justify-center gap-2 bg-primary-01 py-4 px-14 text-otherColors-01 text-base rounded-3xl hover:bg-primary-03 font-normal text-nowrap select-none"
           >
-            Inicie seu projeto agora
+            {t('home.cta')}
             <motion.span
               aria-hidden
               animate={{ y: [0, 3, 0] }}

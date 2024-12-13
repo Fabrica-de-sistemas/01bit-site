@@ -1,0 +1,60 @@
+{
+  "header": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "heading": "Transformando Ideias em Soluções Inovadoras",
+    "description_mobile": "Criamos software inteligente e personalizado que conecta criatividade com tecnologia de ponta.",
+    "description_desktop": "Criamos software inteligente e personalizado que conecta criatividade com tecnologia de ponta. Do design ao front-end, back-end e infraestrutura, estamos aqui para levar sua visão para o próximo nível. Junte-se a nós na construção do futuro digital.",
+    "cta": "Inicie seu projeto agora"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "paragraph1": "Na 01-bit, somos apaixonados por transformar ideias em soluções digitais únicas. Nossa equipe de especialistas trabalha de perto com você para projetar, desenvolver e implementar soluções personalizadas que fazem a diferença. Com uma abordagem inovadora e criativa, estamos envolvidos em cada etapa — desde o design de experiência do usuário até o desenvolvimento front-end e back-end, passando pela infraestrutura.",
+    "paragraph2": "Estamos comprometidos em levar sua visão ao próximo nível, combinando tecnologia de ponta com criatividade para criar um futuro digital impactante."
+  },
+  "services": {
+    "heading": "Nossos Serviços",
+    "description": "Fornecemos soluções completas para todas as etapas do desenvolvimento digital.",
+    "cards": {
+      "card1": {
+        "title": "Construção de sites bonitos",
+        "description": "Experiências que transformam ideias em realidade."
+      },
+      "card2": {
+        "title": "Automação de processos",
+        "description": "Mais praticidade para soluções completas."
+      },
+      "card3": {
+        "title": "Criações de bots",
+        "description": "Mais eficiência para realizar tarefas."
+      }
+    }
+  },
+  "projects": {
+    "heading": "Conheça alguns projetos realizados pela 01-bit",
+    "button": "Inicie seu projeto agora",
+    "altText": "Slide"
+  },
+  "contactUs": {
+    "title": "Vamos começar algo incrível juntos!",
+    "subtitle": "Envie sua mensagem e retornaremos em breve.",
+    "howToFindUs": "Como nos encontrar?",
+    "address": "Av. Ali na esquina, 15 - RJ",
+    "email": "bit01@contact.com",
+    "phone": "+55 3333 3333",
+    "messagePlaceholder": "Conte-nos mais sobre o seu projeto ou ideia! Estamos aqui para ajudar.",
+    "formLabels": {
+      "firstName": "Primeiro nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "tel": "Número de telefone"
+    },
+    "submitButton": "Enviar",
+    "successMessage": "Mensagem enviada com sucesso! Em breve entraremos em contato para conversar sobre seu projeto."
+  }
+}
