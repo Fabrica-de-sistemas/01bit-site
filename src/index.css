@@ -9,6 +9,10 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html.dark header img {
+  filter: brightness(0) invert(1);
+}
+
 /* Estilo do Header no Dark Mode */
 html.dark header {
   background-color: black;
@@ -17,18 +21,25 @@ html.dark header {
 
 /* Tema escuro */
 html.dark .burger-menu {
-  background-color: black; /* Fundo escuro */
-  color: #ffffff; /* Texto claro */
-  border: 1px solid #444444; /* Borda opcional */
+  background-color: black;
+  /* Fundo escuro */
+  color: #ffffff;
+  /* Texto claro */
+  border: 1px solid #444444;
+  /* Borda opcional */
 }
 
 /* Tema claro */
 .burger-menu {
-  background-color: white; /* Fundo claro */
-  color: #000000; /* Texto escuro */
+  background-color: white;
+  /* Fundo claro */
+  color: #000000;
+  /* Texto escuro */
+  border: 1px solid #444444;
+  /* Borda opcional */
 }
 
-html.dark nav{
+html.dark nav {
   background-color: black;
   color: white;
 }
@@ -56,16 +67,22 @@ html.dark body {
 
 /* Estilo para o footer no tema escuro */
 html.dark footer {
-  background-color: #1a1a1a; /* Fundo escuro */
-  color: #f2f2f2; /* Texto claro */
-  border-top: 1px solid #333333; /* Borda superior opcional */
+  background-color: #1a1a1a;
+  /* Fundo escuro */
+  color: #f2f2f2;
+  /* Texto claro */
+  border-top: 1px solid #333333;
+  /* Borda superior opcional */
 }
 
 /* Estilo para o footer no tema claro */
 footer {
-  background-color: #ffffff; /* Fundo claro */
-  color: #000000; /* Texto escuro */
-  border-top: 1px solid #cccccc; /* Borda superior opcional */
+  background-color: #ffffff;
+  /* Fundo claro */
+  color: #000000;
+  /* Texto escuro */
+  border-top: 1px solid #cccccc;
+  /* Borda superior opcional */
 }
 
 /* Transição suave para alternância */
@@ -77,13 +94,16 @@ footer {
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
+
   li {
     list-style-type: none;
   }
-  #menu:checked ~ ul {
+
+  #menu:checked~ul {
     @apply flex;
   }
-  #menu:not(:checked) ~ ul {
+
+  #menu:not(:checked)~ul {
     @apply hidden;
   }
 
@@ -91,10 +111,12 @@ footer {
     display: none;
   }
 }
+
 @keyframes infinite-carousel {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -103,6 +125,7 @@ footer {
 .animate-infinite-carousel {
   animation: infinite-carousel 20s linear infinite;
 }
+
 .animate-infinite-carousel:hover {
   animation-play-state: paused;
 }
