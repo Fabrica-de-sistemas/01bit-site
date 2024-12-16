@@ -1,7 +1,50 @@
 <svg width="691" height="649" viewBox="0 0 691 649" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="552.5" cy="138.5" r="138.5" fill="#F2F2F2"/>
-<circle cx="564" cy="580" r="69" fill="#F2F2F2"/>
-<circle cx="77" cy="594" r="41" fill="#F2F2F2"/>
+<circle cx="552.5" cy="138.5" r="138.5" fill="#F2F2F2">
+    <animate 
+      attributeName="cx" 
+      values="552.5; 580; 552.5" 
+      dur="4s" 
+      keyTimes="0; 0.5; 1" 
+      repeatCount="indefinite" />
+    <animate 
+      attributeName="cy" 
+      values="138.5; 160; 138.5" 
+      dur="4s" 
+      keyTimes="0; 0.5; 1" 
+      repeatCount="indefinite" />
+  </circle>
+
+  <!-- Círculo 2 -->
+  <circle cx="564" cy="580" r="69" fill="#F2F2F2">
+    <animate 
+      attributeName="cx" 
+      values="564; 600; 100; 564" 
+      dur="4s" 
+      keyTimes="0; 0.3; 0.6; 1" 
+      repeatCount="indefinite" />
+    <animate 
+      attributeName="cy" 
+      values="580; 600; 580" 
+      dur="4s" 
+      keyTimes="0; 0.5; 1" 
+      repeatCount="indefinite" />
+  </circle>
+
+  <!-- Círculo 3 -->
+  <circle cx="77" cy="594" r="41" fill="#F2F2F2">
+    <animate 
+      attributeName="cx" 
+      values="77; 90; 77" 
+      dur="4s" 
+      keyTimes="0; 0.5; 1" 
+      repeatCount="indefinite" />
+    <animate 
+      attributeName="cy" 
+      values="594; 610; 594" 
+      dur="4s" 
+      keyTimes="0; 0.5; 1" 
+      repeatCount="indefinite" />
+  </circle>
 <path d="M108.174 113.35C98.7848 113.35 91.1736 120.962 91.1736 130.35V514.573C91.1736 523.962 98.7848 531.573 108.174 531.573H239.996L308.351 622.799C315.262 632.023 329.156 631.841 335.823 622.438L323.587 613.762L335.823 622.438L400.252 531.573H470H539.454C548.843 531.573 556.454 523.962 556.454 514.573V130.35C556.454 120.961 548.843 113.35 539.454 113.35H108.174Z" stroke="#7845E6" stroke-width="30"/>
 <line x1="106.174" y1="401.577" x2="541.454" y2="401.577" stroke="#7845E6" stroke-width="30"/>
 <path d="M632.628 351.873L632.628 193.054" stroke="#7845E6" stroke-width="30" stroke-linecap="round"/>
