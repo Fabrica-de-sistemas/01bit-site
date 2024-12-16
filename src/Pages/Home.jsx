@@ -5,6 +5,7 @@ import ScrollReveal from 'scrollreveal';
 import { useTranslation } from 'react-i18next'; 
 import RobotMobile from '../assets/mobile/logo/Robot.svg';
 import Robot from '../assets/imgs/Robot.svg';
+import HeroParticles from '../Components/HeroParticles';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -26,9 +27,9 @@ const Home = () => {
       ScrollReveal().reveal(article, { ...baseConfig, origin: 'left' });
     });
 
-    rightArticle.forEach((article) => {
-      ScrollReveal().reveal(article, { ...baseConfig, origin: 'right' });
-    });
+    // rightArticle.forEach((article) => {
+    //   ScrollReveal().reveal(article, { ...baseConfig, origin: 'right' });
+    // });
   }, []);
 
   return (
@@ -75,7 +76,9 @@ const Home = () => {
             </motion.span>
           </a>
         </article>
+        
         <article className="hidden md:flex right">
+          <HeroParticles></HeroParticles>
           <img
             src={Robot}
             alt="Robô mascote"
