@@ -2,92 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilo do Header no Light Mode */
-header {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+:root {
+  /* Light Mode Colors */
+  --color-primary: #1a202c; /* Cor principal para Light Mode */
+  --color-secondary: #2d3748; /* Cor secundária */
+  --color-background: #ffffff; /* Fundo claro */
+  --color-text: #000000; /* Texto escuro */
+  --color-nav-bg: white;
+  --color-footer-bg: #ffffff; /* Fundo do footer */
+  --color-footer-text: #000000; /* Texto do footer */
+  --color-header-bg: #ffffff; /* Fundo do Header */
+  --color-header-text: #000000; /* Texto do Header */
+  --color-border: #cccccc; /* Borda padrão */
 }
 
-html.dark header img {
-  filter: brightness(0) invert(1);
+:root.dark {
+  /* Dark Mode Colors */
+  --color-primary: #f7fafc; /* Cor principal para Dark Mode */
+  --color-secondary: #edf2f7; /* Cor secundária */
+  --color-background: #222; /* Fundo escuro */
+  --color-text: #ffffff; /* Texto claro */
+  --color-nav-bg: #222;
+  --color-footer-bg: #1a1a1a; /* Fundo do footer */
+  --color-footer-text: #f2f2f2; /* Texto do footer */
+  --color-header-bg: #222; /* Fundo do Header */
+  --color-header-text: white; /* Texto do Header */
+  --color-border: #444444; /* Borda no Dark Mode */
 }
 
-/* Estilo do Header no Dark Mode */
-html.dark header {
-  background-color: black;
-  color: #ffffff;
-}
-
-/* Tema escuro */
-html.dark .burger-menu {
-  background-color: black;
-  /* Fundo escuro */
-  color: #ffffff;
-  /* Texto claro */
-  border: 1px solid #444444;
-  /* Borda opcional */
-}
-
-/* Tema claro */
-.burger-menu {
-  background-color: white;
-  /* Fundo claro */
-  color: #000000;
-  /* Texto escuro */
-  border: 1px solid #444444;
-  /* Borda opcional */
-}
-
-html.dark nav {
-  background-color: black;
-  color: white;
-}
-
-/* Transição suave para alternância */
-.burger-menu {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-/* Estilo padrão (Light Mode) */
 body {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-text);
   margin: 0;
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Estilo para Dark Mode */
-html.dark body {
-  background-color: #000000;
-  color: white
-}
-
-/* Estilo para o footer no tema escuro */
-html.dark footer {
-  background-color: #1a1a1a;
-  /* Fundo escuro */
-  color: #f2f2f2;
-  /* Texto claro */
-  border-top: 1px solid #333333;
-  /* Borda superior opcional */
-}
-
-/* Estilo para o footer no tema claro */
-footer {
-  background-color: #ffffff;
-  /* Fundo claro */
-  color: #000000;
-  /* Texto escuro */
-  border-top: 1px solid #cccccc;
-  /* Borda superior opcional */
-}
-
-/* Transição suave para alternância */
-footer {
+header {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ajusta o Logo no Light e Dark Mode */
+header img {
+  filter: brightness(0) invert(0); /* Padrão para Light Mode */
+  transition: filter 0.3s ease;
+}
+
+html.dark header img {
+  filter: brightness(0) invert(1); /* Inverte o logo no Dark Mode */
+}
+
+header nav {
+  background-color: var(--color-nav-bg);
+}
+
+header nav a {
+  color: var(--color-header-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--color-secondary); /* Efeito hover no Light e Dark Mode */
+}
+
+.burger-menu {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  border-top: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transição suave para os links */
+nav ul li a {
+  color: var(--color-header-text);
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-secondary);
 }
 
 @layer base {

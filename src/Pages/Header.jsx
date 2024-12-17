@@ -39,9 +39,9 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-otherColors-01 w-full fixed top-0 left-0 right-0 z-50">
+      <header className="w-full fixed top-0 left-0 right-0 z-50">
         <section className="relative">
-          <header className="mt-0 px-3 md:px-5 md:py-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center bg-otherColors-01">
+          <header className="mt-0 px-3 md:px-5 md:py-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center">
             <a href="#" className="md:hidden select-none ml-[12px]">
               <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
@@ -62,7 +62,7 @@ const Header = () => {
 
             <nav
               aria-hidden={!isOpen}
-              className={`md:hidden flex flex-col items-center justify-center gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms] bg-otherColors-01 z-[-1] pl-5 p-5 ${isOpen ? '-translate-y-0' : '-translate-y-[353px]'
+              className={`md:hidden flex flex-col items-center justify-center gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms] z-[-1] pl-5 p-5 ${isOpen ? '-translate-y-0' : '-translate-y-[353px]'
                 }`}
             >
               <li onClick={handleCloseMenu}>

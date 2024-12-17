@@ -8,11 +8,15 @@ export default {
         '01': '#7845E5',
         '02': '#CBB2FF',
         '03': '#502E99',
+        primary: "var(--color-primary)",
+        background: "var(--color-background)",
+        text: "var(--color-text)",
       },
       secondary: {
         '01': '#222222',
         '02': '#555555',
         '03': '#0D0D0D',
+        secondary: "var(--color-secondary)",
       },
       grayColors: {
         '01': '#F2F2F2',
@@ -20,15 +24,6 @@ export default {
       otherColors: {
         '01': '#FFFFFF',
         '02': '#E54545',
-      },
-      // Cores específicas para os modos claro e escuro
-      dark: {
-        background: '#000000',  // Fundo preto para o modo escuro
-        text: '#FFFFFF',  // Texto branco para o modo escuro
-      },
-      light: {
-        background: '#FFFFFF',  // Fundo branco para o modo claro
-        text: '#000000',  // Texto preto para o modo claro
       },
     },
     extend: {
