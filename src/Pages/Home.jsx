@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'react-feather';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ScrollReveal from 'scrollreveal';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 import RobotMobile from '../assets/mobile/logo/Robot.svg';
 import Robot from '../assets/imgs/Robot.svg';
 import HeroParticles from '../Components/HeroParticles';
@@ -10,6 +10,7 @@ import HeroParticles from '../Components/HeroParticles';
 const Home = () => {
   const { t } = useTranslation();
   const homeRef = useRef(null);
+  const [isRendered, setIsRendered] = useState(false); // Controle de renderização
 
   useEffect(() => {
     const leftArticle = document.querySelectorAll('#home .left');
@@ -31,6 +32,12 @@ const Home = () => {
     //   ScrollReveal().reveal(article, { ...baseConfig, origin: 'right' });
     // });
   }, []);
+
+  // Exibe a mensagem no console e ativa a renderização
+  useEffect(() => {
+    console.log('Renderizou');
+    setIsRendered(true);
+  }, []); // Executa apenas na montagem do componente
 
   return (
     <section
@@ -76,9 +83,10 @@ const Home = () => {
             </motion.span>
           </a>
         </article>
-        
+
         <article className="hidden md:flex right">
-          <HeroParticles></HeroParticles>
+          {/* Renderiza HeroParticles somente após isRendered ser true */}
+          {isRendered && <HeroParticles />}
           <img
             src={Robot}
             alt="Robô mascote"

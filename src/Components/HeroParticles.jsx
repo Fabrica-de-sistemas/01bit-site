@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HeroParticles = () => {
   const canvasRef = useRef(null);
+  const [isRendered, setIsRendered] = useState(false); // Variável para rastrear a renderização
 
   // Classe Bubble
   class Bubble {
@@ -10,17 +11,17 @@ const HeroParticles = () => {
       this.parentNode = parentNode;
       this.getCanvasSize();
       window.addEventListener('resize', () => this.getCanvasSize());
-      
+
       this.mouseX = 0;
       this.mouseY = 0;
       window.addEventListener('mousemove', (e) => {
         this.mouseX = e.clientX;
         this.mouseY = e.clientY;
       });
-      
+
       this.randomise(number);
     }
-    
+
     getCanvasSize() {
       this.canvasWidth = this.parentNode.clientWidth;
       this.canvasHeight = this.parentNode.clientHeight;
@@ -69,8 +70,7 @@ const HeroParticles = () => {
     }
 
     start() {
-      this.canvasSize();  // Chama para garantir o tamanho correto do canvas na inicialização
-      window.addEventListener('resize', () => this.canvasSize());
+      this.canvasSize(); // Chama para garantir o tamanho correto do canvas na inicialização
       this.bubblesList = [];
       this.generateBubbles();
       this.animate();
@@ -119,20 +119,21 @@ const HeroParticles = () => {
   }
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const heroParticles = new Background(canvas.id);
-    
-    heroParticles.start();
+    if (isRendered) {
+      const canvas = canvasRef.current;
+      const heroParticles = new Background(canvas.id);
 
-    // Cleanup on component unmount
-    return () => {
-      window.removeEventListener('resize', heroParticles.canvasSize);
-    };
+      // Inicia as partículas
+      heroParticles.start();
+    }
+  }, [isRendered]); // Depende de `isRendered`
+
+  useEffect(() => {
+    // Marca como renderizado após a montagem do componente
+    setIsRendered(true);
   }, []);
 
-  return (
-    <canvas id="hero-particles" className='absolute' ref={canvasRef}></canvas>
-  );
+  return <canvas id="hero-particles" className="absolute" ref={canvasRef}></canvas>;
 };
 
 export default HeroParticles;
