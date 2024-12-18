@@ -33,6 +33,16 @@ const Header = () => {
     i18n.changeLanguage(lang);
   };
 
+   // Suave rolagem ao clicar em um link do menu
+   const handleLinkClick = (e, target) => {
+    e.preventDefault();
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsOpen(false);
+  };
+
   const handleCloseMenu = () => {
     setIsOpen(false);
   };
@@ -69,6 +79,7 @@ const Header = () => {
                 <a
                   className="text-xl text-black font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#home"
+                  onClick={(e) => handleLinkClick(e, "#home")}
                 >
                   {t("header.home")}
                 </a>
@@ -77,6 +88,7 @@ const Header = () => {
                 <a
                   className="text-xl text-black font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#about"
+                  onClick={(e) => handleLinkClick(e, "#about")}
                 >
                   {t("header.about")}
                 </a>
@@ -85,6 +97,7 @@ const Header = () => {
                 <a
                   className="text-xl text-black font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#services"
+                  onClick={(e) => handleLinkClick(e, "#services")}
                 >
                   {t('header.services')}
                 </a>
@@ -93,6 +106,7 @@ const Header = () => {
                 <a
                   className="text-xl text-black font-medium hover:text-primary-02 text-center transition duration-300 select-none"
                   href="#projects"
+                  onClick={(e) => handleLinkClick(e, "#projects")}
                 >
                   {t('header.projects')}
                 </a>
@@ -101,6 +115,7 @@ const Header = () => {
                 <a
                   className="text-lg text-otherColors-01 py-2 px-2 bg-primary-01 rounded-xl border-secondary-01 font-medium hover:bg-primary-02 text-center transition duration-300 select-none ml-[-3px]"
                   href="#contact"
+                  onClick={(e) => handleLinkClick(e, "#contact")}
                 >
                   {t('header.contact')}
                 </a>
@@ -113,6 +128,7 @@ const Header = () => {
                   <a
                     href="#home"
                     className="text-lg text-white font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                    onClick={(e) => handleLinkClick(e, "#home")}
                   >
                     {t('header.home')}
                   </a>
@@ -121,6 +137,7 @@ const Header = () => {
                   <a
                     href="#about"
                     className="text-lg text-white font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                    onClick={(e) => handleLinkClick(e, "#about")}
                   >
                     {t('header.about')}
                   </a>
@@ -129,6 +146,7 @@ const Header = () => {
                   <a
                     href="#services"
                     className="text-lg text-white font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                    onClick={(e) => handleLinkClick(e, "#services")}
                   >
                     {t('header.services')}
                   </a>
@@ -137,6 +155,7 @@ const Header = () => {
                   <a
                     href="#projects"
                     className="text-lg text-white font-medium hover:text-primary-02 cursor-pointer transition duration-300 select-none"
+                    onClick={(e) => handleLinkClick(e, "#projects")}
                   >
                     {t('header.projects')}
                   </a>
@@ -146,6 +165,7 @@ const Header = () => {
               <a
                 href="#contact"
                 className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
+                onClick={(e) => handleLinkClick(e, "#contact")}
               >
                 {t('header.contact')}
               </a>
