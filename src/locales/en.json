@@ -4,13 +4,13 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Request quote"
   },
   "home": {
     "heading": "Transforming Ideas into Innovative Solutions",
-    "description_mobile": "We create smart and personalized software that connects creativity with cutting-edge technology.",
-    "description_desktop": "We create smart and personalized software that connects creativity with cutting-edge technology. From design to front-end, back-end, and infrastructure, we're here to take your vision to the next level. Join us in building the digital future.",
-    "cta": "Start your project now"
+    "description_mobile": "Whether you are a small startup or a large organization, at 01-Bit we combine innovation, creativity, and modern technology to develop customizeds softwares that boosts your business.",
+    "description_desktop": "Whether you are a small startup or a large organization, at 01-Bit we combine innovation, creativity, and modern technology to develop customizeds softwares that boosts your business.",
+    "cta": "Request quote"
   },
   "about": {
     "title": "About Us",
@@ -36,7 +36,7 @@
     }
   },
   "projects": {
-    "heading": "Discover some projects carried out by 01-bit",
+    "heading": "Discover some of our projects",
     "button": "Start your project now",
     "altText": "Slide"
   },

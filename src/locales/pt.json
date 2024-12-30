@@ -4,13 +4,13 @@
     "about": "Sobre",
     "services": "Serviços",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Solicite orçamento"
   },
   "home": {
     "heading": "Transformando Ideias em Soluções Inovadoras",
-    "description_mobile": "Criamos software inteligente e personalizado que conecta criatividade com tecnologia de ponta.",
-    "description_desktop": "Criamos software inteligente e personalizado que conecta criatividade com tecnologia de ponta. Do design ao front-end, back-end e infraestrutura, estamos aqui para levar sua visão para o próximo nível. Junte-se a nós na construção do futuro digital.",
-    "cta": "Inicie seu projeto agora"
+    "description_mobile": "Seja uma pequena startup ou uma grande organização. Na 01-Bit unimos inovação, criatividade, e tecnologia moderna para desenvolver softwares personalizados que impulsionam seu negócio.",
+    "description_desktop": "Seja uma pequena startup ou uma grande organização. Na 01-Bit unimos inovação, criatividade, e tecnologia moderna para desenvolver softwares personalizados que impulsionam seu negócio.",
+    "cta": "Solicite orçamento"
   },
   "about": {
     "title": "Sobre Nós",
@@ -36,7 +36,7 @@
     }
   },
   "projects": {
-    "heading": "Conheça alguns projetos realizados pela 01-bit",
+    "heading": "Conheça alguns de nossos projetos",
     "button": "Inicie seu projeto agora",
     "altText": "Slide"
   },
