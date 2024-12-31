@@ -27,54 +27,90 @@ const About = () => {
           scale: 1,
           easing: 'ease',
           opacity: 0,
-          reset: true,
+          reset: false, // Desativado para não sumir após sair do viewport
         };
 
         ScrollReveal().reveal(card, config);
       });
     };
- 
-     revealCards();
 
-    const interval = setInterval(revealCards, 5000);
+    revealCards();
 
-    return () => clearInterval(interval);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          revealCards(); // Renderiza a animação sempre que a seção entra no viewport
+        }
+      });
+    });
+
+    const aboutSection = document.getElementById('about');
+    observer.observe(aboutSection);
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <section
       id="about"
-      className="flex flex-col justify-end mt-20 px-10 max-w-[540px] mx-auto lg:max-w-[1040px] lg:flex-row lg:items-center lg:justify-center lg:gap-16"
+      className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto md:max-w-[1040px] lg:flex-row lg:gap-16"
     >
-      {/* Adicione as classes rise ou fall nos cards */}
-      <div className="card rise bg-gray-200 p-4 rounded-md mb-4">
-        <h2 className="text-left font-bold text-[28px] text-black mb-5 select-none">
-          {t('about.title')}
-        </h2>
-        <p className="text-left font-normal text-[13px] leading-6 text-black select-none">
-          {t('about.paragraph1')}
-        </p>
-        <p className="text-left font-normal text-[13px] leading-6 text-black mt-3 select-none">
-          {t('about.paragraph2')}
-        </p>
-      </div>
-      <div className="card fall bg-gray-200 p-4 rounded-md mb-4">
-        <div className="flex items-center justify-start gap-2 mt-5">
-          <LinkedinButtonLink
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-          />
-          <EmailButtonLink
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-          />
-          <InstagramButtonLink
-            size={30}
-            strokeWidth={1.5}
-            className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-          />
+      <div className="card global flex flex-col md:flex-row md:gap-4 lg:gap-8">
+        <div className="grid grid-cols-2 gap-4 md:w-2/3 lg:w-2/3">
+          {/* Coluna da esquerda com duas fotos */}
+          <div>
+            <img
+              src="src/assets/imgs/Image01.png"
+              alt="Foto 1"
+              className="w-full h-[200px] md:h-[230px] lg:h-[280px] rounded-md"
+            />
+            <img
+              src="src/assets/imgs/Image02.png"
+              alt="Foto 2"
+              className="w-full h-[200px] md:h-[230px] lg:h-[280px] rounded-md"
+            />
+          </div>
+
+          {/* Coluna do meio com uma foto grande */}
+          <div>
+            <img
+              src="src/assets/imgs/Image03.png"
+              alt="Foto grande"
+              className="w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-md mt-12"
+            />
+          </div>
+        </div>
+
+        {/* Div da direita com o texto */}
+        <div className="w-full md:w-1/2 bg-gray-200 p-2 rounded-md mt-4">
+          <h2 className="text-center font-bold text-[28px] mb-5 select-none">
+            {t('about.title')}
+          </h2>
+          <p className="font-normal text-[13px] leading-6 select-none">
+            {t('about.paragraph1')}
+          </p>
+          <p className="font-normal text-[13px] leading-6 mt-3 select-none">
+            {t('about.paragraph2')}
+          </p>
+          <div className="flex items-center justify-start gap-2 mt-5">
+            <LinkedinButtonLink
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
+            />
+            <EmailButtonLink
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
+            />
+            <InstagramButtonLink
+              size={30}
+              strokeWidth={1.5}
+              className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
+            />
+          </div>
         </div>
       </div>
     </section>

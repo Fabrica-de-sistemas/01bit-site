@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import Logo from '../assets/imgs/logo.svg';
 import LogoMobile from '../assets/mobile/logo/logo.svg';
-import { ArrowUpCircle } from 'react-feather';
+import { ArrowUpCircle, Sun, Moon } from 'react-feather'; // Importe os ícones de sol e lua
 import { Tooltip } from '@mui/material';
 import BurguerMenu from '../Components/BurguerMenu';
 import { useTranslation } from "react-i18next";
-import { FaSun, FaMoon } from 'react-icons/fa';
 import Flag from 'react-world-flags';
 import { useTheme } from "../ThemeProvider.jsx";
 
@@ -33,8 +32,7 @@ const Header = () => {
     i18n.changeLanguage(lang);
   };
 
-   // Suave rolagem ao clicar em um link do menu
-   const handleLinkClick = (e, target) => {
+  const handleLinkClick = (e, target) => {
     e.preventDefault();
     const element = document.querySelector(target);
     if (element) {
@@ -55,6 +53,24 @@ const Header = () => {
             <a href="#" className="md:hidden select-none ml-[12px]">
               <img src={LogoMobile} alt="Logo 01-bit" />
             </a>
+            <div className="md:hidden flex flex-row gap-2">
+              <Tooltip title="Português" arrow placement="left">
+                <button
+                  onClick={() => handleLanguageChange('pt')}
+                  className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
+                >
+                  <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full" />
+                </button>
+              </Tooltip>
+              <Tooltip title="English" arrow placement="left">
+                <button
+                  onClick={() => handleLanguageChange('en')}
+                  className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
+                >
+                  <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full" />
+                </button>
+              </Tooltip>
+            </div>
 
             <BurguerMenu
               onClick={() => setIsOpen(!isOpen)}
@@ -72,8 +88,7 @@ const Header = () => {
 
             <nav
               aria-hidden={!isOpen}
-              className={`md:hidden flex flex-col items-center justify-center gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms] z-[-1] pl-5 p-5 ${isOpen ? '-translate-y-0' : '-translate-y-[353px]'
-                }`}
+              className={`md:hidden flex flex-col items-center justify-center gap-6 absolute top-[100%] left-0 w-full transition-all duration-[800ms] z-[-1] pl-5 p-5 ${isOpen ? '-translate-y-0' : '-translate-y-[353px]'}`}
             >
               <li onClick={handleCloseMenu}>
                 <a
@@ -122,8 +137,8 @@ const Header = () => {
               </li>
             </nav>
 
-            <nav className="hidden md:flex items-center justify-between gap-8 xl:gap-24">
-              <ul className="flex items-center justify-center flex-grow gap-5 lg:gap-11">
+            <nav className="hidden md:flex items-center justify-between gap-4 xl:gap-8">
+              <ul className="flex items-center justify-center flex-grow gap-3 lg:gap-5">
                 <li>
                   <a
                     href="#home"
@@ -162,59 +177,55 @@ const Header = () => {
                 </li>
               </ul>
 
-              <a
-                href="#contact"
-                className="bg-primary-01 py-3 px-5 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
-                onClick={(e) => handleLinkClick(e, "#contact")}
-              >
-                {t('header.contact')}
-              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href="#contact"
+                  className="bg-primary-01 py-2 px-4 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
+                  onClick={(e) => handleLinkClick(e, "#contact")}
+                >
+                  {t('header.contact')}
+                </a>
+                <Tooltip title="Português" arrow>
+                  <button
+                    onClick={() => handleLanguageChange('pt')}
+                    className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
+                  >
+                    <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full" />
+                  </button>
+                </Tooltip>
+                <Tooltip title="English" arrow>
+                  <button
+                    onClick={() => handleLanguageChange('en')}
+                    className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
+                  >
+                    <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full" />
+                  </button>
+                </Tooltip>
+                {/* Botão de alternância de tema */}
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
+                >
+                  {theme === 'dark' ? (
+                    <Sun size={24} className="text-yellow-500" />
+                  ) : (
+                    <Moon size={24} className="text-gray-800" />
+                  )}
+                </button>
+              </div>
             </nav>
           </header>
         </section>
       </header>
-
-      <div className="fixed bottom-5 right-5 flex flex-col items-center gap-3 z-10 animate__animated animate__fadeInUp">
-        {showScrollTopButton && (
-          <Tooltip title="Ir para o topo" arrow placement="left">
-            <button
-              onClick={scrollToTop}
-              className="bg-primary-02 text-white p-3 rounded-full shadow-lg hover:bg-primary-03 transition duration-300 flex items-center justify-center"
-            >
-              <ArrowUpCircle size={20} className="text-otherColors-01" />
-            </button>
-          </Tooltip>
-        )}
-        <div className="flex flex-col gap-2">
-          <Tooltip title="Português" arrow placement="left">
-            <button
-              onClick={() => handleLanguageChange('pt')}
-              className="bg-secondary-01 text-white p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
-            >
-              <Flag code="BR" alt="Bandeira do Brasil" className="w-full h-full object-cover rounded-full" />
-            </button>
-          </Tooltip>
-          <Tooltip title="English" arrow placement="left">
-            <button
-              onClick={() => handleLanguageChange('en')}
-              className="bg-secondary-01 text-white p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
-            >
-              <Flag code="US" alt="Bandeira dos EUA" className="w-full h-full object-cover rounded-full" />
-            </button>
-          </Tooltip>
-          <Tooltip title={theme === "dark" ? "Modo claro" : "Modo escuro"} arrow placement="left">
-            <button
-              onClick={() => {
-                toggleTheme();
-              }}
-              className="bg-white text-white p-3 rounded-full shadow-lg hover:bg-primary-01 transition duration-300"
-            >
-              {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
-            </button>
-          </Tooltip>
-
-        </div>
-      </div>
+      {showScrollTopButton && (
+        <button
+          className="fixed bottom-6 right-6 p-3 bg-primary-01 rounded-full shadow-lg hover:bg-primary-02 transition duration-300"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <ArrowUpCircle size={24} className="text-white" />
+        </button>
+      )}
     </>
   );
 };

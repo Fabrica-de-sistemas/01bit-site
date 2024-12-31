@@ -37,19 +37,19 @@ const HeroParticles = () => {
       this.posX += ((this.mouseX / (this.staticity / this.magnetism)) - this.posX) / this.smoothFactor;
       this.posY += ((this.mouseY / (this.staticity / this.magnetism)) - this.posY) / this.smoothFactor;
 
-      if (this.translateY + this.posY < 0 || this.translateX + this.posX < 0 || this.translateX + this.posX > this.canvasWidth) {
+      if (this.translateY + this.posY < -100 || this.translateX + this.posX < 0 || this.translateX + this.posX > this.canvasWidth) {
         this.randomise(this.number);
         this.translateY = this.canvasHeight;
       }
     }
 
     randomise(number) {
-      this.colors = ['255,255,255'];
+      
       this.velocity = 30; // Bubble levitation velocity (the higher the slower)
       this.smoothFactor = 50; // The higher, the smoother
       this.staticity = 30; // Increase value to make bubbles move slower on mousemove
       this.magnetism = 0.1 + Math.random() * 4;
-      this.color = '255,255,255';
+      this.color = '242,242,242';
       this.alpha = this.generateDecimalBetween(10, 20) / 10;
       this.size = number === 0 ? 70 : number === 1 ? 34 : 20;
       this.posX = number === 0 ? 276 : number === 1 ? 282 : 38;
@@ -133,7 +133,7 @@ const HeroParticles = () => {
     setIsRendered(true);
   }, []);
 
-  return <canvas id="hero-particles" className="absolute" ref={canvasRef}></canvas>;
+  return <canvas id="hero-particles" className="absolute -z-10 opacity-85" ref={canvasRef}></canvas>;
 };
 
 export default HeroParticles;

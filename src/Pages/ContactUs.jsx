@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Mail, Phone, MessageCircle } from 'react-feather';
 import { useForm } from 'react-hook-form';
@@ -14,6 +14,7 @@ import '../i18n';
 
 const ContactUs = () => {
   const { t } = useTranslation();
+  const [showRedirectOptions, setShowRedirectOptions] = useState(false); // Estado para controlar a exibição das opções de envio
 
   const {
     register,
@@ -21,12 +22,26 @@ const ContactUs = () => {
     reset,
     formState: { errors },
     trigger,
+    watch,
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
     reset();
-    toast.success(t('contactUs.successMessage'));
+
+    // Exibir as opções de envio após o sucesso do formulário
+    setShowRedirectOptions(true);
+  };
+
+  const handleEmailRedirect = () => {
+    setShowRedirectOptions(false);
+    window.location.href = `mailto:bit01@contact.com?subject=Mensagem de ${watch('firstName')} ${watch('lastName')}&body=${encodeURIComponent(watch('message'))}`;
+  };
+
+  const handleWhatsAppRedirect = () => {
+    setShowRedirectOptions(false);
+    const message = `Olá, gostaria de entrar em contato: \n\nNome: ${watch('firstName')} ${watch('lastName')}\nE-mail: ${watch('email')}\nTelefone: ${watch('tel')}\nMensagem: ${watch('message')}`;
+    window.location.href = `https://wa.me/5521967441433?text=${encodeURIComponent(message)}`;
   };
 
   useEffect(() => {
@@ -241,6 +256,27 @@ const ContactUs = () => {
                 {t('contactUs.submitButton')}
               </button>
             </form>
+
+            {/* Exibir as opções de envio após o envio do formulário */}
+            {showRedirectOptions && (
+              <div className="mt-10 text-center">
+                <p className="text-secondary-01">{t('contactUs.redirectOptions')}</p>
+                <div className="flex gap-4 justify-center mt-5">
+                  <button
+                    onClick={handleEmailRedirect}
+                    className="bg-primary-03 text-grayColors-01 px-4 py-2 rounded-3xl"
+                  >
+                    {t('contactUs.emailOption')}
+                  </button>
+                  <button
+                    onClick={handleWhatsAppRedirect}
+                    className="bg-primary-03 text-grayColors-01 px-4 py-2 rounded-3xl"
+                  >
+                    {t('contactUs.whatsAppOption')}
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </div>

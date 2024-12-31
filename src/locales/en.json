@@ -55,6 +55,9 @@
       "tel": "Phone number"
     },
     "submitButton": "Send",
-    "successMessage": "Message sent successfully! We'll get back to you soon to discuss your project."
+    "successMessage": "Message sent successfully! We'll get back to you soon to discuss your project.",
+    "redirectOptions": "Choose for where send",
+    "emailOption": "Send for Email",
+    "whatsAppOption": "Send for Whatsapp"
   }
 }
