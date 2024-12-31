@@ -59,7 +59,9 @@ const Header = () => {
                   onClick={() => handleLanguageChange('pt')}
                   className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                 >
-                  <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full" />
+                  <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full"
+                  style={{ filter: 'none', color: 'inherit' }}
+                  />
                 </button>
               </Tooltip>
               <Tooltip title="English" arrow placement="left">
@@ -67,7 +69,9 @@ const Header = () => {
                   onClick={() => handleLanguageChange('en')}
                   className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                 >
-                  <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full" />
+                  <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full" 
+                  style={{ filter: 'none', color: 'inherit' }}
+                  />
                 </button>
               </Tooltip>
             </div>
@@ -190,7 +194,9 @@ const Header = () => {
                     onClick={() => handleLanguageChange('pt')}
                     className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                   >
-                    <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full" />
+                    <Flag code="BR" alt="Bandeira do Brasil" className="w-8 h-8 object-cover rounded-full"
+                    style={{ filter: 'none', color: 'inherit' }}
+                    />
                   </button>
                 </Tooltip>
                 <Tooltip title="English" arrow>
@@ -198,20 +204,12 @@ const Header = () => {
                     onClick={() => handleLanguageChange('en')}
                     className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                   >
-                    <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full" />
+                    <Flag code="US" alt="Bandeira dos EUA" className="w-8 h-8 object-cover rounded-full"
+                    style={{ filter: 'none', color: 'inherit' }}
+                    />
                   </button>
                 </Tooltip>
-                {/* Botão de alternância de tema */}
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-full shadow-lg hover:bg-primary-01 transition duration-300 flex items-center justify-center w-12 h-12 border-none"
-                >
-                  {theme === 'dark' ? (
-                    <Sun size={24} className="text-yellow-500" />
-                  ) : (
-                    <Moon size={24} className="text-gray-800" />
-                  )}
-                </button>
+                
               </div>
             </nav>
           </header>
