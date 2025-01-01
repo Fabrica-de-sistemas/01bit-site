@@ -27,28 +27,33 @@ const About = () => {
           scale: 1,
           easing: 'ease',
           opacity: 0,
-          reset: false, // Desativado para não sumir após sair do viewport
+          reset: false, // As animações não "resetam"
+          afterReveal: () => {
+            card.style.opacity = 1; // Garante que os elementos permaneçam visíveis
+          },
         };
 
         ScrollReveal().reveal(card, config);
       });
     };
 
-    revealCards();
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          revealCards(); // Renderiza a animação sempre que a seção entra no viewport
-        }
-      });
-    });
-
     const aboutSection = document.getElementById('about');
-    observer.observe(aboutSection);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealCards(); // Executa a animação quando a seção entra no viewport
+            observer.disconnect(); // Remove o observer para evitar repetição
+          }
+        });
+      },
+      { threshold: 0.1 } // Percentual visível para disparar a animação
+    );
+
+    if (aboutSection) observer.observe(aboutSection);
 
     return () => {
-      observer.disconnect();
+      observer.disconnect(); // Limpa o observer ao desmontar
     };
   }, []);
 
@@ -59,7 +64,6 @@ const About = () => {
     >
       <div className="card global flex flex-col md:flex-row md:gap-4 lg:gap-8">
         <div className="grid grid-cols-2 gap-4 md:w-2/3 lg:w-2/3">
-          {/* Coluna da esquerda com duas fotos */}
           <div>
             <img
               src="src/assets/imgs/Image01.png"
@@ -72,8 +76,6 @@ const About = () => {
               className="w-full h-[200px] md:h-[230px] lg:h-[280px] rounded-md"
             />
           </div>
-
-          {/* Coluna do meio com uma foto grande */}
           <div>
             <img
               src="src/assets/imgs/Image03.png"
@@ -82,8 +84,6 @@ const About = () => {
             />
           </div>
         </div>
-
-        {/* Div da direita com o texto */}
         <div className="w-full md:w-1/2 bg-gray-200 p-2 rounded-md mt-4">
           <h2 className="text-center font-bold text-[28px] mb-5 select-none">
             {t('about.title')}
