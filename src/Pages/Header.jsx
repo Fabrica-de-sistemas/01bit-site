@@ -216,13 +216,15 @@ const Header = () => {
         </section>
       </header>
       {showScrollTopButton && (
+        <Tooltip title={t('header.top')} arrow placement='left'>
         <button
-          className="fixed bottom-6 right-6 p-3 bg-primary-01 rounded-full shadow-lg hover:bg-primary-02 transition duration-300"
+          className="fixed bottom-6 right-6 p-3 bg-primary-01 rounded-full shadow-lg z-20 hover:bg-primary-02 transition duration-300"
           onClick={scrollToTop}
           aria-label="Scroll to top"
         >
-          <ArrowUpCircle size={24} className="text-white" />
+          <ArrowUpCircle size={24} stroke='#fff' />
         </button>
+        </Tooltip>
       )}
     </>
   );

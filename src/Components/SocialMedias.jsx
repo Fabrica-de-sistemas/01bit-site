@@ -7,7 +7,7 @@ import { Linkedin } from "react-feather";
 const EmailButtonLink = (props) => {
   return (
     <Tooltip title="E-mail">
-      <a href="">
+      <a href="mailto:fabricadesistemas@outlook.com">
         <Mail {...props}/>
       </a>
     </Tooltip>

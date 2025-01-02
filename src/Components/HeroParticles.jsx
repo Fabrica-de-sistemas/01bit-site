@@ -37,7 +37,7 @@ const HeroParticles = () => {
       this.posX += ((this.mouseX / (this.staticity / this.magnetism)) - this.posX) / this.smoothFactor;
       this.posY += ((this.mouseY / (this.staticity / this.magnetism)) - this.posY) / this.smoothFactor;
 
-      if (this.translateY + this.posY < -100 || this.translateX + this.posX < 0 || this.translateX + this.posX > this.canvasWidth) {
+      if (this.translateY + this.posY < -100 || this.translateX + this.posX > this.canvasWidth) {
         this.randomise(this.number);
         this.translateY = this.canvasHeight;
       }

@@ -63,7 +63,7 @@ const About = () => {
       className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto md:max-w-[1040px] lg:flex-row lg:gap-16"
     >
       <div className="card global flex flex-col md:flex-row md:gap-4 lg:gap-8">
-        <div className="grid grid-cols-2 gap-4 md:w-2/3 lg:w-2/3">
+        <div className="grid grid-cols-2 gap-4 md:w-2/3 lg:w-2/3 hidden md:grid">
           <div>
             <img
               src="src/assets/imgs/Image01.png"
@@ -84,6 +84,7 @@ const About = () => {
             />
           </div>
         </div>
+
         <div className="w-full md:w-1/2 bg-gray-200 p-2 rounded-md mt-4">
           <h2 className="text-center font-bold text-[28px] mb-5 select-none">
             {t('about.title')}
@@ -95,21 +96,21 @@ const About = () => {
             {t('about.paragraph2')}
           </p>
           <div className="flex items-center justify-start gap-2 mt-5">
-            <LinkedinButtonLink
+            {/* <LinkedinButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-            />
+            /> */}
             <EmailButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
             />
-            <InstagramButtonLink
+            {/* <InstagramButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-            />
+            /> */}
           </div>
         </div>
       </div>

@@ -69,19 +69,19 @@ const ContactUs = () => {
                 {t('contactUs.howToFindUs')}
               </h2>
               <address className="flex flex-col gap-4 text-white">
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <MapPin className="text-primary-02" />
                   <span className="font-light select-none">
                     {t('contactUs.address')}
                   </span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-4">
                   <Mail className="text-primary-02" />
                   <a
-                    href="mailto:bit01@contact.com"
+                    href="mailto:fabricadesistemas@outlook.com"
                     className="font-light select-none"
                   >
-                    {t('contactUs.email')}
+                    fabricadesistemas@outlook.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
@@ -93,9 +93,9 @@ const ContactUs = () => {
               </address>
             </div>
             <div className="flex gap-2 mt-24">
-              <LinkedinButtonLink className="text-primary-02 hover:text-grayColors-01 select-none" />
+              {/* <LinkedinButtonLink className="text-primary-02 hover:text-grayColors-01 select-none" />
               <InstagramButtonLink className="text-primary-02 hover:text-grayColors-01 select-none" />
-              <EmailButtonLink className="text-primary-02 hover:text-grayColors-01 select-none" />
+              <EmailButtonLink className="text-primary-02 hover:text-grayColors-01 select-none" /> 
               <a
                 href="https://wa.me/5521967441433"
                 target="_blank"
@@ -104,6 +104,7 @@ const ContactUs = () => {
               >
                 <MessageCircle size={24} />
               </a>
+              */}
             </div>
           </div>
 
