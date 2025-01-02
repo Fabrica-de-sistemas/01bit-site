@@ -22,16 +22,16 @@
     "description": "Fornecemos soluções completas para todas as etapas do desenvolvimento digital.",
     "cards": {
       "card1": {
-        "title": "Construção de sites bonitos",
-        "description": "Experiências que transformam ideias em realidade."
+        "title": "Apps Simples e Eficientes",
+        "description": "Fáceis de usar e com funcionalidade que você precisa."
       },
       "card2": {
-        "title": "Automação de processos",
-        "description": "Mais praticidade para soluções completas."
+        "title": "Automação de Processos",
+        "description": "Bots? Automação de E-mails? Podemos ajudar!"
       },
       "card3": {
-        "title": "Criações de bots",
-        "description": "Mais eficiência para realizar tarefas."
+        "title": "Sites Responsivos",
+        "description": "Para qualquer dispositivo, em qualquer lugar."
       }
     }
   },

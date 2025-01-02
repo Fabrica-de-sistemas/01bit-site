@@ -22,16 +22,16 @@
     "description": "We provide complete solutions for all stages of digital development.",
     "cards": {
       "card1": {
-        "title": "Building Beautiful Websites",
-        "description": "Experiences that turn ideas into reality."
+        "title": "Simple and Efficient Apps",
+        "description": "Easy to use and with the functionality you need."
       },
       "card2": {
         "title": "Process Automation",
-        "description": "More convenience for complete solutions."
+        "description": "Bots? Email Automation? We can help!"
       },
       "card3": {
-        "title": "Bot Creation",
-        "description": "More efficiency to perform tasks."
+        "title": "Responsive Websites",
+        "description": "For any device, anywhere."
       }
     }
   },
