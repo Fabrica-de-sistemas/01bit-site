@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import Card from '../Components/Card';
-import { Figma, Database, TrendingUp } from 'react-feather';
+import ProcessAutomation from '../assets/imgs/time-is-money.png';
+import Devices from '../assets/imgs/devices.png';
+import WebDesign from '../assets/imgs/web-design.png';
 import ScrollReveal from 'scrollreveal';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   useEffect(() => {
     const cards = document.querySelectorAll('#services .card');
@@ -40,41 +42,25 @@ const Services = () => {
       </article>
       <article
         id="cards"
-        className="flex flex-col gap-[10px] md:flex-row items-center justify-center md:flex-wrap md:gap-6"
+        className="flex flex-col gap-6 md:flex-row items-center justify-center md:flex-wrap md:gap-10"
       >
         <Card
-          icon={
-            <Figma
-              aria-hidden
-              size={50}
-              strokeWidth={1.5}
-              className="text-primary-01 select-none"
-            />
-          }
+          icon={<img src={WebDesign} alt="Icone de web design" />}
           title={t('services.cards.card1.title')}
           description={t('services.cards.card1.description')}
         />
         <Card
           icon={
-            <Database
-              aria-hidden
-              size={50}
-              strokeWidth={1.5}
-              className="text-primary-01 select-none"
+            <img
+              src={ProcessAutomation}
+              alt="Icone de automação de processos"
             />
           }
           title={t('services.cards.card2.title')}
           description={t('services.cards.card2.description')}
         />
         <Card
-          icon={
-            <TrendingUp
-              aria-hidden
-              size={50}
-              strokeWidth={1.5}
-              className="text-primary-01 select-none"
-            />
-          }
+          icon={<img src={Devices} alt="Icone de devices" />}
           title={t('services.cards.card3.title')}
           description={t('services.cards.card3.description')}
         />

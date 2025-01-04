@@ -7,9 +7,9 @@ import {
 const Footer = () => {
   return (
     <footer className="mt-20 py-8 grid grid-cols-1 items-center justify-center gap-[10px]">
-      <div className="flex justify-center items-center gap-2 select-none">
+      <div className="flex justify-center items-center gap-2 select-none text-secondary-01">
         ©
-        <span className="font-normal text-base select-none">
+        <span className="font-normal text-base select-none text-secondary-01">
           Todos os direitos reservados
         </span>
       </div>

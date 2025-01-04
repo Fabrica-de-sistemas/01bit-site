@@ -57,7 +57,7 @@
     },
     "submitButton": "Enviar",
     "successMessage": "Mensagem enviada com sucesso! Em breve entraremos em contato para conversar sobre seu projeto.",
-    "redirectOptions": "Escolha por onde enviar",
+    "redirectOptions": "Como prefere se conectar ?",
     "emailOption": "Enviar por email",
     "whatsAppOption": "Enviar por Whatsapp"
   }

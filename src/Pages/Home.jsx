@@ -35,7 +35,6 @@ const Home = () => {
 
   // Exibe a mensagem no console e ativa a renderização
   useEffect(() => {
-    console.log('Renderizou');
     setIsRendered(true);
   }, []); // Executa apenas na montagem do componente
 

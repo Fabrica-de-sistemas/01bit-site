@@ -47,7 +47,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.1 } // Percentual visível para disparar a animação
+      { threshold: 0.1 }, // Percentual visível para disparar a animação
     );
 
     if (aboutSection) observer.observe(aboutSection);
@@ -60,10 +60,10 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto md:max-w-[1040px] lg:flex-row lg:gap-16"
+      className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto xl:max-w-[1040px] xl:flex-row xl:gap-16"
     >
-      <div className="card global flex flex-col md:flex-row md:gap-4 lg:gap-8">
-        <div className="grid grid-cols-2 gap-4 md:w-2/3 lg:w-2/3 hidden md:grid">
+      <div className="card global flex flex-col xl:flex-row xl:items-center xl:justify-center md:gap-4 lg:gap-8">
+        {/* <div className=" grid-cols-2 gap-4 md:w-2/3 lg:w-2/3 hidden md:grid">
           <div>
             <img
               src="src/assets/imgs/Image01.png"
@@ -83,10 +83,59 @@ const About = () => {
               className="w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-md mt-12"
             />
           </div>
+        </div> */}
+
+        <div
+          id="mobile"
+          className="flex xl:hidden flex-row-reverse items-start gap-5"
+        >
+          <div>
+            <img
+              className="mb-5 w-[165px] h-[235px] lg:w-[234px] lg:h-[300px]"
+              src="src/assets/imgs/Image01.png"
+              alt="Perfil image"
+            />
+            <img
+              src="src/assets/imgs/Image03.png"
+              alt="Perfil image"
+              className="max-w-[234px] h-[235px] lg:h-[300px]"
+            />
+          </div>
+          <div className="self-center ">
+            <img
+              src="src/assets/imgs/Image02.png"
+              alt="Perfil image"
+              className="max-w-[234px] h-[235px] lg:h-[300px]"
+            />
+          </div>
+        </div>
+        <div
+          id="desktop"
+          className="hidden xl:flex items-start justify-end gap-8"
+        >
+          <div>
+            <img
+              className="mb-5 rounded-3xl max-w-[234px] h-[335px]"
+              src="src/assets/imgs/Image02.png"
+              alt="Perfil image"
+            />
+            <img
+              className="rounded-3xl max-w-[234px] h-[335px]"
+              src="src/assets/imgs/Image03.png"
+              alt="Perfil image"
+            />
+          </div>
+          <div className="self-start mt-28">
+            <img
+              className="rounded-3xl max-w-[234px] h-[436px]"
+              src="src/assets/imgs/Image01.png"
+              alt="Perfil image"
+            />
+          </div>
         </div>
 
-        <div className="w-full md:w-1/2 bg-gray-200 p-2 rounded-md mt-4">
-          <h2 className="text-center font-bold text-[28px] mb-5 select-none">
+        <div className="w-full xl:w-1/2 bg-gray-200 p-2 rounded-md mt-4">
+          <h2 className="text-start font-bold text-[28px] mb-5 select-none">
             {t('about.title')}
           </h2>
           <p className="font-normal text-[13px] leading-6 select-none">
