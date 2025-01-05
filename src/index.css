@@ -127,3 +127,11 @@ nav ul li a:hover {
 .animate-infinite-carousel:hover {
   animation-play-state: paused;
 }
+
+.carousel {
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}

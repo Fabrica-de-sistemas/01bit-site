@@ -49,7 +49,7 @@ const Header = () => {
     <>
       <header className="w-full fixed top-0 left-0 right-0 z-50">
         <section className="relative">
-          <div className="mt-0 px-3 md:px-5 md:py-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center">
+          <div className="mt-0 px-3 lg:px-5 md:py-5 flex md:w-[720px] md840px:w-[790px] lg:w-[980px] xl:w-[1230px] md:mx-auto justify-between items-center">
             <a href="#" className="md:hidden select-none ml-[12px]">
               <img
                 src={LogoMobile}
@@ -61,7 +61,7 @@ const Header = () => {
               <img
                 src={Logo}
                 alt="Logo 01-bit"
-                className="w-[119px] lg:w-[124px] h-12 lg:ml-[-20px]"
+                className="w-[119px] lg:w-[124px] h-12 lg:ml-[-20px] "
               />
             </a>
             <BurguerMenu
@@ -195,7 +195,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 xl:gap-2">
                 <a
                   href="#contact"
                   className="bg-primary-01 py-2 px-4 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
@@ -204,7 +204,7 @@ const Header = () => {
                   {t('header.contact')}
                 </a>
 
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <Tooltip title="Português" arrow>
                     <button
                       onClick={() => handleLanguageChange('pt')}

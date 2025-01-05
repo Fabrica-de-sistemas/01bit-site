@@ -69,7 +69,7 @@ const ContactUs = () => {
     <>
       <ToastContainer position="top-right" autoClose={3000} />
       <div id="contact">
-        <section className="screen320px:w-[301px] screen414px:w-[361px] screen414px:px-[30px] lg:flex lg:flex-row lg:items-center lg:justify-center mt-20 mx-auto w-full lg:w-[900px] bg-otherColors-01 shadow-boxShadow rounded-3xl py-10 px-5 lg:px-10 gap-10 relative">
+        <section className="screen320px:w-[301px] screen414px:w-[361px] screen414px:px-[30px] lg:flex lg:flex-row lg:items-center lg:justify-center mt-20 mx-auto w-full lg:w-[900px] bg-otherColors-01 shadow-boxShadow rounded-3xl py-20 md:py-10 px-5 lg:px-10 gap-10 relative">
           {/* Div de informações de contato */}
           <div className="hidden lg:flex w-full h-[300px] lg:w-[42%] bg-primary-03 text-grayColors-01 rounded-3xl px-8 py-20 flex-col lg:relative">
             <div className="grid gap-5">
@@ -195,7 +195,7 @@ const ContactUs = () => {
               </>
             ) : (
               <div className="mt-10 text-center">
-                <h3 className="mt-[-80px] text-center font-medium text-[28px] text-secondary-01 select-none">
+                <h3 className="mt-[-40px] lg:mt-[-80px] font-medium text-2xl mb-2 lg:text-[28px] text-secondary-01 select-none">
                   {t('contactUs.redirectOptions')}
                 </h3>
                 <p className="text-secondary-02 text-sm font-light">
@@ -204,13 +204,13 @@ const ContactUs = () => {
                 <div className="flex gap-4 justify-center mt-5">
                   <button
                     onClick={handleEmailRedirect}
-                    className="bg-primary-01 hover:bg-primary-03 text-grayColors-01 px-4 py-2 rounded-3xl"
+                    className="bg-primary-01 hover:bg-primary-03 text-grayColors-01 px-4 py-3  rounded-3xl text-xs lg:text-base text-nowrap"
                   >
                     {t('contactUs.emailOption')}
                   </button>
                   <button
                     onClick={handleWhatsAppRedirect}
-                    className="bg-primary-01 hover:bg-primary-03 text-grayColors-01 px-4 py-2 rounded-3xl"
+                    className="bg-primary-01 hover:bg-primary-03 text-grayColors-01 px-4 py-3  rounded-3xl text-xs lg:text-base text-nowrap"
                   >
                     {t('contactUs.whatsAppOption')}
                   </button>

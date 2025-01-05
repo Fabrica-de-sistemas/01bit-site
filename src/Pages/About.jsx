@@ -27,9 +27,9 @@ const About = () => {
           scale: 1,
           easing: 'ease',
           opacity: 0,
-          reset: false, // As animações não "resetam"
+          // reset: false, // A animação não se repete
           afterReveal: () => {
-            card.style.opacity = 1; // Garante que os elementos permaneçam visíveis
+            card.style.opacity = '1'; // Garante visibilidade final
           },
         };
 
@@ -42,92 +42,68 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            revealCards(); // Executa a animação quando a seção entra no viewport
-            observer.disconnect(); // Remove o observer para evitar repetição
+            revealCards(); // Executa animações
+            observer.disconnect(); // Evita repetição
           }
         });
       },
-      { threshold: 0.1 }, // Percentual visível para disparar a animação
+      { threshold: 0.1 }, // Dispara quando 10% da seção está visível
     );
 
     if (aboutSection) observer.observe(aboutSection);
 
     return () => {
-      observer.disconnect(); // Limpa o observer ao desmontar
+      observer.disconnect(); // Limpa observer ao desmontar
     };
   }, []);
 
   return (
     <section
       id="about"
-      className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto xl:max-w-[1040px] xl:flex-row xl:gap-16"
+      className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto xl:max-w-[1040px] xl:flex-row xl:gap-16 "
     >
       <div className="card global flex flex-col xl:flex-row xl:items-center xl:justify-center md:gap-4 lg:gap-8">
-        {/* <div className=" grid-cols-2 gap-4 md:w-2/3 lg:w-2/3 hidden md:grid">
-          <div>
-            <img
-              src="src/assets/imgs/Image01.png"
-              alt="Foto 1"
-              className="w-full h-[200px] md:h-[230px] lg:h-[280px] rounded-md"
-            />
-            <img
-              src="src/assets/imgs/Image02.png"
-              alt="Foto 2"
-              className="w-full h-[200px] md:h-[230px] lg:h-[280px] rounded-md"
-            />
-          </div>
-          <div>
-            <img
-              src="src/assets/imgs/Image03.png"
-              alt="Foto grande"
-              className="w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-md mt-12"
-            />
-          </div>
-        </div> */}
-
         <div
           id="mobile"
-          className="flex xl:hidden flex-row-reverse items-start gap-5"
+          className="flex md:hidden flex-row-reverse items-start gap-3"
         >
-          <div>
+          <div className="flex flex-col gap-2">
             <img
-              className="mb-5 w-[165px] h-[235px] lg:w-[234px] lg:h-[300px]"
               src="src/assets/imgs/Image01.png"
               alt="Perfil image"
+              className="card fall max-w-[160px] h-[190px]"
             />
             <img
               src="src/assets/imgs/Image03.png"
               alt="Perfil image"
-              className="max-w-[234px] h-[235px] lg:h-[300px]"
+              className="card rise max-w-[160px] h-[190px] "
             />
           </div>
-          <div className="self-center ">
-            <img
-              src="src/assets/imgs/Image02.png"
-              alt="Perfil image"
-              className="max-w-[234px] h-[235px] lg:h-[300px]"
-            />
-          </div>
+          <img
+            src="src/assets/imgs/Image02.png"
+            alt="Perfil image"
+            className="card rise max-w-[160px] h-[190px]  self-center"
+          />
         </div>
         <div
           id="desktop"
-          className="hidden xl:flex items-start justify-end gap-8"
+          className="hidden md:flex items-start justify-end gap-8"
         >
           <div>
             <img
-              className="mb-5 rounded-3xl max-w-[234px] h-[335px]"
+              className="card fall mb-5 rounded-3xl max-w-[234px] h-[335px]"
               src="src/assets/imgs/Image02.png"
               alt="Perfil image"
             />
             <img
-              className="rounded-3xl max-w-[234px] h-[335px]"
+              className="card rise rounded-3xl max-w-[234px] h-[335px]"
               src="src/assets/imgs/Image03.png"
               alt="Perfil image"
             />
           </div>
           <div className="self-start mt-28">
             <img
-              className="rounded-3xl max-w-[234px] h-[436px]"
+              className="card rise rounded-3xl max-w-[234px] h-[436px]"
               src="src/assets/imgs/Image01.png"
               alt="Perfil image"
             />
@@ -145,11 +121,11 @@ const About = () => {
             {t('about.paragraph2')}
           </p>
           <div className="flex items-center justify-start gap-2 mt-5">
-            {/* <LinkedinButtonLink
+            <LinkedinButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-            /> */}
+            />
             <EmailButtonLink
               size={30}
               strokeWidth={1.5}
