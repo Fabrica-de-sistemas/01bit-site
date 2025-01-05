@@ -70,11 +70,14 @@ header nav a:hover {
 
 .burger-menu {
   border: none;
+  background-color: var(--color-background);
+  color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 footer {
   background-color: var(--color-footer-bg);
+  color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
