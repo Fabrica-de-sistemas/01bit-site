@@ -153,10 +153,10 @@ const Header = () => {
             </nav>
 
             <nav
-              className="hidden md:flex items-center justify-between gap-4 xl:gap-20
+              className="hidden md:flex items-center justify-between gap-4 lg:gap-10 xl:gap-40
             "
             >
-              <ul className="flex items-center justify-center flex-grow gap-3 lg:gap-10">
+              <ul className="flex items-center justify-center flex-grow gap-5 lg:gap-10">
                 <li>
                   <a
                     href="#home"
@@ -198,7 +198,7 @@ const Header = () => {
               <div className="flex items-center gap-1 xl:gap-2">
                 <a
                   href="#contact"
-                  className="bg-primary-01 py-2 px-4 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 font-medium transition duration-300 select-none cursor-pointer"
+                  className="bg-primary-01 py-2 px-4 text-otherColors-01 text-md rounded-3xl hover:bg-primary-03 hover:text-otherColors-01 font-medium transition duration-300 select-none cursor-pointer"
                   onClick={(e) => handleLinkClick(e, '#contact')}
                 >
                   {t('header.contact')}
