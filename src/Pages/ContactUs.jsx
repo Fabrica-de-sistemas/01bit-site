@@ -19,18 +19,32 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
     trigger,
     watch,
   } = useForm();
 
+  const [firstName, setFirstName] = useState("");
+  const [detailsProject, setDetailsProject] = useState("");
   const onSubmit = (data) => {
     console.log(data);
-    reset();
+    setFirstName(data["firstName"]);
+    setDetailsProject(data["message"]);
+    console.log(firstName);
+    console.log(setDetailsProject);
 
     // Exibir as opções de envio após o sucesso do formulário
     setShowRedirectOptions(true);
+  };
+
+  const handleWhatsAppRedirect = () => {
+    setShowRedirectOptions(false);
+    console.log(firstName);
+    console.log(detailsProject);
+    const message = `Olá, meu nome é ${firstName}.\n\ngostaria de entrar em contato sobre o meu projeto, saber sobre a precificação e etc. Segue os detalhes:\n\n${detailsProject}`;
+    window.location.href = `https://wa.me/5521967441433?text=${encodeURIComponent(
+      message,
+    )}`;
   };
 
   const handleEmailRedirect = () => {
@@ -40,17 +54,7 @@ const ContactUs = () => {
     )} ${watch('lastName')}&body=${encodeURIComponent(watch('message'))}`;
   };
 
-  const handleWhatsAppRedirect = () => {
-    setShowRedirectOptions(false);
-    const message = `Olá, gostaria de entrar em contato: \n\nNome: ${watch(
-      'firstName',
-    )} ${watch('lastName')}\nE-mail: ${watch('email')}\nTelefone: ${watch(
-      'tel',
-    )}\nMensagem: ${watch('message')}`;
-    window.location.href = `https://wa.me/5521967441433?text=${encodeURIComponent(
-      message,
-    )}`;
-  };
+  
 
   useEffect(() => {
     const config = {

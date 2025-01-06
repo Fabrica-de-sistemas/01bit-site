@@ -121,11 +121,11 @@ const About = () => {
             {t('about.paragraph2')}
           </p>
           <div className="flex items-center justify-start gap-2 mt-5">
-            <LinkedinButtonLink
+            {/* <LinkedinButtonLink
               size={30}
               strokeWidth={1.5}
               className="hidden md:block text-primary-02 hover:text-primary-01 select-none"
-            />
+            /> */}
             <EmailButtonLink
               size={30}
               strokeWidth={1.5}
