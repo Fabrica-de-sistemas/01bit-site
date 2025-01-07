@@ -77,7 +77,7 @@ const Projects = () => {
           href="#contact"
           className="flex justify-center justify-self-center gap-2 bg-primary-01 py-4 px-14 text-otherColors-01 text-base rounded-3xl hover:bg-primary-03 font-normal select-none"
         >
-          Inicie seu projeto agora
+          {t("projects.button")}
         </a>
       </section>
     </section>

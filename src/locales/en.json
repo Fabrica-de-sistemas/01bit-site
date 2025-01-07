@@ -46,19 +46,34 @@
     "subtitle": "Send us your message, and we will get back to you soon.",
     "howToFindUs": "How to find us?",
     "address": "Av. Ali na esquina, 15 - RJ",
-    "email": "bit01@contact.com",
     "phone": "+55 3333 3333",
     "messagePlaceholder": "Tell us more about your project or idea! We're here to help.",
+    "contactMessages": {
+      "messageFrom": "Message from",
+      "startMessage": "Hi, my name is",
+      "detailsMessage": "I would like to get in touch about my idea/project, inquire about pricing, etc. Here are the details:"
+    },
+    
+    "emailOrWhatsapp": "Choose email or Whatsapp and we are ready to listen to you!",
+    "errors": {
+      "nameRequired": "Name is required",
+      "minimumLengthName": "Name must have at least",
+      "characters": "Characters",
+      "messageRequired": "Message is required",
+      "minimumLengthMessage": "Message must have at least"
+    },
+    
     "formLabels": {
-      "firstName": "First name",
-      "lastName": "Last name",
-      "email": "Email",
-      "tel": "Phone number"
+      "firstName": "First name"
     },
     "submitButton": "Send",
     "successMessage": "Message sent successfully! We'll get back to you soon to discuss your project.",
     "redirectOptions": "Choose for where send",
     "emailOption": "Send for Email",
     "whatsAppOption": "Send for Whatsapp"
+  },
+
+  "footer": {
+    "rightsReserved": "All rights reserved"
   }
 }

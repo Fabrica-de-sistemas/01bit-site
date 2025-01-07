@@ -27,11 +27,8 @@ const ContactUs = () => {
   const [firstName, setFirstName] = useState("");
   const [detailsProject, setDetailsProject] = useState("");
   const onSubmit = (data) => {
-    console.log(data);
     setFirstName(data["firstName"]);
     setDetailsProject(data["message"]);
-    console.log(firstName);
-    console.log(setDetailsProject);
 
     // Exibir as opções de envio após o sucesso do formulário
     setShowRedirectOptions(true);
@@ -39,19 +36,13 @@ const ContactUs = () => {
 
   const handleWhatsAppRedirect = () => {
     setShowRedirectOptions(false);
-    console.log(firstName);
-    console.log(detailsProject);
-    const message = `Olá, meu nome é ${firstName}.\n\ngostaria de entrar em contato sobre o meu projeto, saber sobre a precificação e etc. Segue os detalhes:\n\n${detailsProject}`;
-    window.location.href = `https://wa.me/5521967441433?text=${encodeURIComponent(
-      message,
-    )}`;
+    const message = `${t("contactUs.contactMessages.startMessage")} ${firstName}.\n\n${t("contactUs.contactMessages.detailsMessage")}\n\n${detailsProject}`;
+    window.open(`https://wa.me/5521967441433?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleEmailRedirect = () => {
     setShowRedirectOptions(false);
-    window.location.href = `mailto:bit01@contact.com?subject=Mensagem de ${watch(
-      'firstName',
-    )} ${watch('lastName')}&body=${encodeURIComponent(watch('message'))}`;
+    window.open(`mailto:fabricadesistemas@outlook.com?subject=${encodeURIComponent(t("contactUs.contactMessages.messageFrom"))} ${firstName}&body=${encodeURIComponent(t("contactUs.contactMessages.detailsMessage") + " " + detailsProject)}`, "_blank");
   };
 
   
@@ -143,10 +134,10 @@ const ContactUs = () => {
                       placeholder={t('contactUs.formLabels.firstName')}
                       className="w-full py-[10px] px-4 md:px-2 border-b-2 border-secondary-02 border-opacity-30 text-secondary-02 placeholder-secondary-02 placeholder-opacity-30 focus:outline-none focus:border-primary-02 placeholder:text-sm select-none"
                       {...register('firstName', {
-                        required: 'O nome é obrigatório.',
+                        required: t("contactUs.errors.nameRequired"),
                         minLength: {
                           value: 3,
-                          message: 'O nome deve ter pelo menos 3 caracteres.',
+                          message: `${t("contactUs.errors.minimumLengthName")} 3 ${t("contactUs.errors.characters").toLowerCase()}` ,
                         },
                       })}
                       onChangeCapture={() => trigger('firstName')}
@@ -167,11 +158,11 @@ const ContactUs = () => {
                       placeholder={t('contactUs.messagePlaceholder')}
                       className="w-full py-[10px] px-4 md:px-2 border-b-2 border-secondary-02 border-opacity-30 text-secondary-02 placeholder-secondary-02 placeholder-opacity-30 focus:outline-none focus:border-primary-02 placeholder:text-sm select-none"
                       {...register('message', {
-                        required: 'A mensagem é obrigatória',
+                        required: t("contactUs.errors.messageRequired"),
                         minLength: {
                           value: 10,
                           message:
-                            'A mensagem deve ter pelo menos 10 caracteres.',
+                            `${t("contactUs.errors.minimumLengthMessage")} 10 ${t("contactUs.errors.characters").toLowerCase()}`,
                         },
                       })}
                       onChangeCapture={() => trigger('message')}
@@ -203,7 +194,7 @@ const ContactUs = () => {
                   {t('contactUs.redirectOptions')}
                 </h3>
                 <p className="text-secondary-02 text-sm font-light">
-                  Escolha email ou WhatsApp e estamos prontos para te ouvir!
+                  {t("contactUs.emailOrWhatsapp")}
                 </p>
                 <div className="flex gap-4 justify-center mt-5">
                   <button
