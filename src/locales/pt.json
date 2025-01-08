@@ -53,7 +53,7 @@
       "startMessage": "Olá, meu nome é",
       "detailsMessage": "Gostaria de entrar em contato sobre o meu projeto, saber sobre a precificação e etc. Segue os detalhes:"
     },
-    "emailOrWhatsapp": "Escolha email ou Whatsapp e estamos prontos para te ouvir!",
+    "emailOrWhatsapp": "Você será redirecionado para a plataforma escolhida.",
     "errors": {
       "nameRequired": "O nome é obrigatório",
       "minimumLengthName": "O nome deve ter pelo menos",
@@ -61,14 +61,14 @@
       "messageRequired": "A mensagem é obrigatória",
       "minimumLengthMessage": "A mensagem deve ter pelo menos"
     },
-    
+
     "formLabels": {
       "firstName": "Primeiro nome"
     },
-     
+
     "submitButton": "Enviar",
     "successMessage": "Mensagem enviada com sucesso! Em breve entraremos em contato para conversar sobre seu projeto.",
-    "redirectOptions": "Como prefere se conectar ?",
+    "redirectOptions": "Obrigado por entrar em contato!",
     "emailOption": "Enviar por email",
     "whatsAppOption": "Enviar por Whatsapp"
   },

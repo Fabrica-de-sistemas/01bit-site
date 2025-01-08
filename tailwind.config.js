@@ -8,15 +8,15 @@ export default {
         '01': '#7845E5',
         '02': '#CBB2FF',
         '03': '#502E99',
-        primary: "var(--color-primary)",
-        background: "var(--color-background)",
-        text: "var(--color-text)",
+        primary: 'var(--color-primary)',
+        background: 'var(--color-background)',
+        text: 'var(--color-text)',
       },
       secondary: {
         '01': '#222222',
         '02': '#555555',
         '03': '#0D0D0D',
-        secondary: "var(--color-secondary)",
+        secondary: 'var(--color-secondary)',
       },
       grayColors: {
         '01': '#F2F2F2',
@@ -38,6 +38,9 @@ export default {
       },
       gridAutoColumns: {
         900: 'calc((100% / 3) - 12px)',
+      },
+      backgroundImage: {
+        bgImage: "url('/src/assets/imgs/background.png')",
       },
     },
   },

@@ -53,8 +53,8 @@
       "startMessage": "Hi, my name is",
       "detailsMessage": "I would like to get in touch about my idea/project, inquire about pricing, etc. Here are the details:"
     },
-    
-    "emailOrWhatsapp": "Choose email or Whatsapp and we are ready to listen to you!",
+
+    "emailOrWhatsapp": "You will be redirected to the selected platform.",
     "errors": {
       "nameRequired": "Name is required",
       "minimumLengthName": "Name must have at least",
@@ -62,13 +62,13 @@
       "messageRequired": "Message is required",
       "minimumLengthMessage": "Message must have at least"
     },
-    
+
     "formLabels": {
       "firstName": "First name"
     },
     "submitButton": "Send",
     "successMessage": "Message sent successfully! We'll get back to you soon to discuss your project.",
-    "redirectOptions": "Choose for where send",
+    "redirectOptions": "Thank you for reaching out!",
     "emailOption": "Send for Email",
     "whatsAppOption": "Send for Whatsapp"
   },

@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="mt-28 mx-10 flex flex-col justify-center items-center gap-3 md:flex-row md:justify-between"
+      className="mt-28 mx-10 flex flex-col justify-center items-center gap-3 md:flex-row md:justify-between "
     >
       <div ref={homeRef} className="w-[164px] mb-5 md:hidden select-none">
         <img src={RobotMobile} alt="Robô mascote" />

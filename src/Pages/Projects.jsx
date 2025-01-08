@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Landing1 from '../assets/projects/landing1.webp';
-import Landing3 from '../assets/projects/landing3.webp';
-import Landing4 from '../assets/projects/landing4.webp';
+import Landing1 from '../assets/projects/landing1.jpg';
+import Landing2 from '../assets/projects/landing2.jpg';
+import Landing3 from '../assets/projects/landing3.jpg';
+import Landing4 from '../assets/projects/landing4.jpg';
+import Landing5 from '../assets/projects/landing5.png';
 
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { useRef } from 'react';
@@ -25,7 +27,7 @@ const Projects = () => {
     }
   };
 
-  const images = [Landing1, Landing3, Landing4, Landing3, Landing1];
+  const images = [Landing1, Landing2, Landing3, Landing4, Landing5];
 
   return (
     <section
@@ -77,7 +79,7 @@ const Projects = () => {
           href="#contact"
           className="flex justify-center justify-self-center gap-2 bg-primary-01 py-4 px-14 text-otherColors-01 text-base rounded-3xl hover:bg-primary-03 font-normal select-none"
         >
-          {t("projects.button")}
+          {t('projects.button')}
         </a>
       </section>
     </section>

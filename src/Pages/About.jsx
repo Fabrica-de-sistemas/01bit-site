@@ -62,32 +62,10 @@ const About = () => {
       id="about"
       className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto xl:max-w-[1040px] xl:flex-row xl:gap-16 "
     >
-      <div className="card global flex flex-col xl:flex-row xl:items-center xl:justify-center md:gap-4 lg:gap-8">
-        <div
-          id="mobile"
-          className="flex md:hidden flex-row-reverse items-start gap-3"
-        >
-          <div className="flex flex-col gap-2">
-            <img
-              src="src/assets/imgs/Image01.png"
-              alt="Perfil image"
-              className="card fall max-w-[160px] h-[190px]"
-            />
-            <img
-              src="src/assets/imgs/Image03.png"
-              alt="Perfil image"
-              className="card rise max-w-[160px] h-[190px] "
-            />
-          </div>
-          <img
-            src="src/assets/imgs/Image02.png"
-            alt="Perfil image"
-            className="card rise max-w-[160px] h-[190px]  self-center"
-          />
-        </div>
+      <div className="card global flex flex-col md:flex-row md:items-center md:justify-center md:gap-4 lg:gap-8">
         <div
           id="desktop"
-          className="hidden md:flex items-start justify-end gap-8"
+          className="hidden xl:flex items-start justify-end gap-3"
         >
           <div>
             <img
