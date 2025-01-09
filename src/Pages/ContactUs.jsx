@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef  } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Mail, Phone, MessageCircle } from 'react-feather';
 import { useForm } from 'react-hook-form';
@@ -15,20 +15,21 @@ import '../i18n';
 const ContactUs = () => {
   const { t } = useTranslation();
   const [showRedirectOptions, setShowRedirectOptions] = useState(false); // Estado para controlar a exibição das opções de envio
-
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
     trigger,
-    watch,
   } = useForm();
 
+  const formRedirectRef = useRef(); // necessário para questões de acessibilidade
   const [firstName, setFirstName] = useState("");
   const [detailsProject, setDetailsProject] = useState("");
   const onSubmit = (data) => {
     setFirstName(data["firstName"]);
     setDetailsProject(data["message"]);
+
 
     // Exibir as opções de envio após o sucesso do formulário
     setShowRedirectOptions(true);
@@ -58,6 +59,8 @@ const ContactUs = () => {
     };
 
     ScrollReveal().reveal(document.querySelector('#contact'), config);
+
+    
   }, []);
 
   return (
@@ -112,7 +115,7 @@ const ContactUs = () => {
           </div>
 
           {/* Formulário */}
-          <div className="w-full lg:w-[58%] lg:ml-0 lg:mt-10">
+          <div className="w-full lg:w-[58%] lg:ml-0 lg:mt-10" ref={formRedirectRef} >
             {/* Exibir as opções de envio após o envio do formulário */}
             {showRedirectOptions === false ? (
               <>
@@ -189,7 +192,7 @@ const ContactUs = () => {
                 </form>
               </>
             ) : (
-              <div className="mt-10 text-center">
+              <div className="mt-10 text-center" aria-live="assertive">
                 <h3 className="mt-[-40px] lg:mt-[-80px] font-medium text-2xl mb-2 lg:text-[28px] text-secondary-01 select-none">
                   {t('contactUs.redirectOptions')}
                 </h3>

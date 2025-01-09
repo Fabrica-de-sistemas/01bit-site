@@ -62,7 +62,12 @@ const About = () => {
       id="about"
       className="flex flex-col mt-20 px-10 max-w-[540px] mx-auto xl:max-w-[1040px] xl:flex-row xl:gap-16 "
     >
-      <div className="card global flex flex-col md:flex-row md:items-center md:justify-center md:gap-4 lg:gap-8">
+      <div className="card global flex flex-col xl:flex-row xl:items-center xl:justify-center md:gap-4 lg:gap-8">
+        <div
+          id="mobile"
+          className="flex md:hidden flex-row-reverse items-start gap-3"
+        >
+        </div>
         <div
           id="desktop"
           className="hidden xl:flex items-start justify-end gap-3"
