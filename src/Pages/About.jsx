@@ -2,8 +2,6 @@ import ScrollReveal from 'scrollreveal';
 
 import {
   EmailButtonLink,
-  InstagramButtonLink,
-  LinkedinButtonLink,
 } from '../Components/SocialMedias';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';

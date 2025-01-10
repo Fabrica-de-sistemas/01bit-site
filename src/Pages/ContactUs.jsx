@@ -1,15 +1,10 @@
-import React, { useEffect, useState, useRef  } from 'react';
+import { useEffect, useState, useRef  } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Mail, Phone, MessageCircle } from 'react-feather';
+import { Mail, Phone } from 'react-feather';
 import { useForm } from 'react-hook-form';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollReveal from 'scrollreveal';
-import {
-  EmailButtonLink,
-  InstagramButtonLink,
-  LinkedinButtonLink,
-} from '../Components/SocialMedias';
 import '../i18n';
 
 const ContactUs = () => {

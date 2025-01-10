@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react';
 import Logo from '../assets/imgs/logo.svg';
 import LogoMobile from '../assets/mobile/logo/logo.svg';
-import { ArrowUpCircle, Sun, Moon } from 'react-feather'; // Importe os ícones de sol e lua
+import { ArrowUpCircle} from 'react-feather';
 import { Tooltip } from '@mui/material';
 import BurguerMenu from '../Components/BurguerMenu';
 import { useTranslation } from 'react-i18next';
 import Flag from 'react-world-flags';
-import { useTheme } from '../ThemeProvider.jsx';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
-  const { theme, toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
 
   useEffect(() => {

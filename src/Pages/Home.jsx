@@ -14,7 +14,6 @@ const Home = () => {
 
   useEffect(() => {
     const leftArticle = document.querySelectorAll('#home .left');
-    const rightArticle = document.querySelectorAll('#home .right');
 
     const baseConfig = {
       duration: 1000,
