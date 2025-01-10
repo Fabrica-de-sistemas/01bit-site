@@ -38,7 +38,7 @@ const ContactUs = () => {
   const handleWhatsAppRedirect = () => {
     setShowRedirectOptions(false);
     const message = `${t("contactUs.contactMessages.startMessage")} ${firstName}.\n\n${t("contactUs.contactMessages.detailsMessage")}\n\n${detailsProject}`;
-    window.open(`https://wa.me/5521967441433?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/5521972849819?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleEmailRedirect = () => {
@@ -92,7 +92,7 @@ const ContactUs = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="text-primary-02" />
-                  <a href="tel:+5533333333" className="font-light select-none">
+                  <a href="tel:+5521972849819" className="font-light select-none">
                     {t('contactUs.phone')}
                   </a>
                 </div>
