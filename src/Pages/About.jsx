@@ -70,18 +70,18 @@ const About = () => {
         >
           <div className="flex flex-col gap-2">
             <img
-              src="../../public/assets/imgs/Image01.png"
+              src={img1}
               alt="Perfil image"
               className="card fall max-w-[160px] h-[190px]"
             />
             <img
-              src="../../public/assets/imgs/Image03.png"
+              src={img3}
               alt="Perfil image"
               className="card rise max-w-[160px] h-[190px] "
             />
           </div>
           <img
-            src="../../public/assets/imgs/Image02.png"
+            src={img2}
             alt="Perfil image"
             className="card rise max-w-[160px] h-[190px]  self-center"
           />
