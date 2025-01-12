@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Landing1 from '../assets/projects/landing1.jpg';
-import Landing2 from '../assets/projects/landing2.jpg';
-import Landing3 from '../assets/projects/landing3.jpg';
-import Landing4 from '../assets/projects/landing4.jpg';
-import Landing5 from '../assets/projects/landing5.png';
+import Landing1 from '../../public/assets/projects/landing1.jpg';
+import Landing2 from '../../public/assets/projects/landing2.jpg';
+import Landing3 from '../../public/assets/projects/landing3.jpg';
+import Landing4 from '../../public/assets/projects/landing4.jpg';
+import Landing5 from '../../public/assets/projects/landing5.png';
 
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { useRef } from 'react';

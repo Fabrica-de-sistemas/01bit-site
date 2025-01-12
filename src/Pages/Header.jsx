@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Logo from '../assets/imgs/logo.svg';
-import LogoMobile from '../assets/mobile/logo/logo.svg';
+import Logo from '../../public/assets/imgs/logo.svg';
+import LogoMobile from '../../public/assets/mobile/logo/logo.svg';
 import { ArrowUpCircle} from 'react-feather';
 import { Tooltip } from '@mui/material';
 import BurguerMenu from '../Components/BurguerMenu';

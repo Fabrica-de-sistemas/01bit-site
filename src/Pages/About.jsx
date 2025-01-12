@@ -5,9 +5,9 @@ import {
 } from '../Components/SocialMedias';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import img1 from '../assets/imgs/Image01.png';
-import img2 from '../assets/imgs/Image02.png';
-import img3 from '../assets/imgs/Image03.png';
+import img1 from '../../public/assets/imgs/Image01.png'
+import img2 from '../../public/assets/imgs/Image02.png';
+import img3 from '../../public/assets/imgs/Image03.png';
 
 const About = () => {
   const { t } = useTranslation();
@@ -70,18 +70,18 @@ const About = () => {
         >
           <div className="flex flex-col gap-2">
             <img
-              src="src/assets/imgs/Image01.png"
+              src="../../public/assets/imgs/Image01.png"
               alt="Perfil image"
               className="card fall max-w-[160px] h-[190px]"
             />
             <img
-              src="src/assets/imgs/Image03.png"
+              src="../../public/assets/imgs/Image03.png"
               alt="Perfil image"
               className="card rise max-w-[160px] h-[190px] "
             />
           </div>
           <img
-            src="src/assets/imgs/Image02.png"
+            src="../../public/assets/imgs/Image02.png"
             alt="Perfil image"
             className="card rise max-w-[160px] h-[190px]  self-center"
           />
