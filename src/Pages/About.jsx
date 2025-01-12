@@ -67,18 +67,18 @@ const About = () => {
         >
           <div className="flex flex-col gap-2">
             <img
-              src="../../public/assets/imgs/Image01.png"
+              src="/assets/imgs/Image01.png"
               alt="Perfil image"
               className="card fall max-w-[160px] h-[190px]"
             />
             <img
-              src="../../public/assets/imgs/Image03.png"
+              src="/assets/imgs/Image03.png"
               alt="Perfil image"
               className="card rise max-w-[160px] h-[190px] "
             />
           </div>
           <img
-            src="../../public/assets/imgs/Image02.png"
+            src="/assets/imgs/Image02.png"
             alt="Perfil image"
             className="card rise max-w-[160px] h-[190px]  self-center"
           />
@@ -90,19 +90,19 @@ const About = () => {
           <div>
             <img
               className="card fall mb-5 rounded-3xl max-w-[234px] h-[335px]"
-              src="../../public/assets/imgs/Image01.png"
+              src="/assets/imgs/Image01.png"
               alt="Perfil image"
             />
             <img
               className="card rise rounded-3xl max-w-[234px] h-[335px]"
-              src="../../public/assets/imgs/Image02.png"
+              src="/assets/imgs/Image02.png"
               alt="Perfil image"
             />
           </div>
           <div className="self-start mt-28">
             <img
               className="card rise rounded-3xl max-w-[234px] h-[436px]"
-              src="../../public/assets/imgs/Image03.png"
+              src="/assets/imgs/Image03.png"
               alt="Perfil image"
             />
           </div>
