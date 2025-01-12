@@ -63,7 +63,7 @@ const Header = () => {
             </a>
             <BurguerMenu
               onClick={() => setIsOpen(!isOpen)}
-              className={` burger-menu md:hidden ${isOpen ? 'active' : ''}`}
+              className={`md:hidden ${isOpen ? 'active' : ''}`}
               aria-expanded={isOpen}
               aria-controls="navigation_bar"
             />
