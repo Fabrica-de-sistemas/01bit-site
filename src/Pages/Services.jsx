@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import Card from '../Components/Card';
-import ProcessAutomation from '../../public/assets/imgs/time-is-money.png';
-import Devices from '../../public/assets/imgs/devices.png';
-import WebDesign from '../../public/assets/imgs/web-design.png';
+import ProcessAutomation from '/src/assets/imgs/time-is-money.png';
+import Devices from '/src/assets/imgs/devices.png';
+import WebDesign from '/src/assets/imgs/web-design.png';
 import ScrollReveal from 'scrollreveal';
 import { useTranslation } from 'react-i18next';
 

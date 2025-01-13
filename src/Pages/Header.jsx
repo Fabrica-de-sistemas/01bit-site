@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import Logo from '../../public/assets/imgs/logo.svg';
-import LogoMobile from '../../public/assets/mobile/logo/logo.svg';
+import Logo from '/src/assets/imgs/logo.svg';
+import LogoMobile from '/src/assets/mobile/logo/logo.svg';
 import { ArrowUpCircle} from 'react-feather';
 import { Tooltip } from '@mui/material';
 import BurguerMenu from '../Components/BurguerMenu';
 import { useTranslation } from 'react-i18next';
+import Flag from 'react-world-flags';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
             </a>
             <BurguerMenu
               onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden ${isOpen ? 'active' : ''}`}
+              className={` burger-menu md:hidden ${isOpen ? 'active' : ''}`}
               aria-expanded={isOpen}
               aria-controls="navigation_bar"
             />
@@ -125,7 +126,12 @@ const Header = () => {
                     onClick={() => handleLanguageChange('pt')}
                     className="rounded-full  transition duration-300 flex items-center justify-center w-8 h-8 border-none"
                   >
-                    🇧🇷
+                    <Flag
+                      code="BR"
+                      alt="Bandeira do Brasil"
+                      className="w-7 h-7 object-cover rounded-full"
+                      style={{ filter: 'none', color: 'inherit' }}
+                    />
                   </button>
                 </Tooltip>
                 <Tooltip title="English" arrow placement="left">
@@ -133,7 +139,12 @@ const Header = () => {
                     onClick={() => handleLanguageChange('en')}
                     className="rounded-full transition duration-300 flex items-center justify-center w-8 h-8 border-none"
                   >
-                    🇺🇲
+                    <Flag
+                      code="US"
+                      alt="Bandeira dos EUA"
+                      className="w-7 h-7 object-cover rounded-full"
+                      style={{ filter: 'none', color: 'inherit' }}
+                    />
                   </button>
                 </Tooltip>
               </div>
@@ -197,7 +208,12 @@ const Header = () => {
                       onClick={() => handleLanguageChange('pt')}
                       className="p-2 rounded-full transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                     >
-                      🇧🇷
+                      <Flag
+                        code="BR"
+                        alt="Bandeira do Brasil"
+                        className="w-8 h-8 object-cover rounded-full"
+                        style={{ filter: 'none', color: 'inherit' }}
+                      />
                     </button>
                   </Tooltip>
                   <Tooltip title="English" arrow>
@@ -205,7 +221,12 @@ const Header = () => {
                       onClick={() => handleLanguageChange('en')}
                       className="p-2 rounded-full transition duration-300 flex items-center justify-center w-12 h-12 border-none"
                     >
-                      🇺🇲
+                      <Flag
+                        code="US"
+                        alt="Bandeira dos EUA"
+                        className="w-8 h-8 object-cover rounded-full"
+                        style={{ filter: 'none', color: 'inherit' }}
+                      />
                     </button>
                   </Tooltip>
                 </div>

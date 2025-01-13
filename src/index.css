@@ -23,6 +23,10 @@
 
 @media (prefers-color-scheme: dark) {
   
+  html.dark header img {
+    filter: brightness(0) invert(1);
+  }
+  
   :root{
   --color-primary: #f7fafc; /* Cor principal para Dark Mode */
   --color-secondary: #edf2f7; /* Cor secundária */
@@ -69,10 +73,6 @@ header {
 header img {
   filter: brightness(0) invert(0); /* Padrão para Light Mode */
   transition: filter 0.3s ease;
-}
-
-html.dark header img {
-  filter: brightness(0) invert(1); /* Inverte o logo no Dark Mode */
 }
 
 

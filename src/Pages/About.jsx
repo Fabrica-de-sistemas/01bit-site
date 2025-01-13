@@ -65,44 +65,28 @@ const About = () => {
           id="mobile"
           className="flex md:hidden flex-row-reverse items-start gap-3"
         >
-          <div className="flex flex-col gap-2">
-            <img
-              src="/assets/imgs/Image01.png"
-              alt="Perfil image"
-              className="card fall max-w-[160px] h-[190px]"
-            />
-            <img
-              src="/assets/imgs/Image03.png"
-              alt="Perfil image"
-              className="card rise max-w-[160px] h-[190px] "
-            />
-          </div>
-          <img
-            src="/assets/imgs/Image02.png"
-            alt="Perfil image"
-            className="card rise max-w-[160px] h-[190px]  self-center"
-          />
+          
         </div>
         <div
           id="desktop"
-          className="hidden md:flex items-start justify-end gap-8"
+          className="hidden xl:flex items-start justify-end gap-3"
         >
           <div>
             <img
               className="card fall mb-5 rounded-3xl max-w-[234px] h-[335px]"
-              src="/assets/imgs/Image01.png"
+              src="/src/assets/imgs/Image01.png"
               alt="Perfil image"
             />
             <img
               className="card rise rounded-3xl max-w-[234px] h-[335px]"
-              src="/assets/imgs/Image02.png"
+              src="/src/assets/imgs/Image02.png"
               alt="Perfil image"
             />
           </div>
           <div className="self-start mt-28">
             <img
               className="card rise rounded-3xl max-w-[234px] h-[436px]"
-              src="/assets/imgs/Image03.png"
+              src="/src/assets/imgs/Image03.png"
               alt="Perfil image"
             />
           </div>
