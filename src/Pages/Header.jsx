@@ -141,7 +141,7 @@ const Header = () => {
 
             <nav
               className="hidden md:flex items-center justify-between gap-4 lg:gap-10 xl:gap-40
-            "
+            " 
             >
               <ul className="flex items-center justify-center flex-grow gap-5 lg:gap-10">
                 <li>

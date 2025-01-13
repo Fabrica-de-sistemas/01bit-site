@@ -2,18 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  transition: background-color 0s !important; 
+}
+
+
 :root {
   /* Light Mode Colors */
   --color-primary: #1a202c; /* Cor principal para Light Mode */
   --color-secondary: #2d3748; /* Cor secundária */
   --color-background: #ffffff; /* Fundo claro */
   --color-text: #000000; /* Texto escuro */
-  --color-nav-bg: white;
+  
   --color-footer-bg: #ffffff; /* Fundo do footer */
   --color-footer-text: #000000; /* Texto do footer */
   --color-header-bg: #ffffff; /* Fundo do Header */
   --color-header-text: #000000; /* Texto do Header */
   --color-border: #cccccc; /* Borda padrão */
+}
+
+@media (prefers-color-scheme: dark) {
+  
+  :root{
+  --color-primary: #f7fafc; /* Cor principal para Dark Mode */
+  --color-secondary: #edf2f7; /* Cor secundária */
+  --color-background: #222; /* Fundo escuro */
+  --color-text: #ffffff; /* Texto claro */
+  
+  --color-footer-bg: #1a1a1a; /* Fundo do footer */
+  --color-footer-text: #f2f2f2; /* Texto do footer */
+  --color-header-bg: #222; /* Fundo do Header */
+  --color-header-text: white; /* Texto do Header */
+  --color-border: #444444; /* Borda no Dark Mode */
+  }
 }
 
 :root.dark {
@@ -22,7 +43,7 @@
   --color-secondary: #edf2f7; /* Cor secundária */
   --color-background: #222; /* Fundo escuro */
   --color-text: #ffffff; /* Texto claro */
-  --color-nav-bg: #222;
+  
   --color-footer-bg: #1a1a1a; /* Fundo do footer */
   --color-footer-text: #f2f2f2; /* Texto do footer */
   --color-header-bg: #222; /* Fundo do Header */
@@ -54,9 +75,7 @@ html.dark header img {
   filter: brightness(0) invert(1); /* Inverte o logo no Dark Mode */
 }
 
-header nav {
-  background-color: var(--color-background);
-}
+
 
 header nav a {
   color: var(--color-header-text);
