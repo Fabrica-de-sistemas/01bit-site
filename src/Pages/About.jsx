@@ -5,6 +5,9 @@ import {
 } from '../Components/SocialMedias';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import img1 from '/src/assets/imgs/Image01.png';
+import img2 from '/src/assets/imgs/Image02.png';
+import img3 from '/src/assets/imgs/Image03.png';
 
 const About = () => {
   const { t } = useTranslation();
@@ -74,19 +77,19 @@ const About = () => {
           <div>
             <img
               className="card fall mb-5 rounded-3xl max-w-[234px] h-[335px]"
-              src="/src/assets/imgs/Image01.png"
+              src={img1}
               alt="Perfil image"
             />
             <img
               className="card rise rounded-3xl max-w-[234px] h-[335px]"
-              src="/src/assets/imgs/Image02.png"
+              src={img2}
               alt="Perfil image"
             />
           </div>
           <div className="self-start mt-28">
             <img
               className="card rise rounded-3xl max-w-[234px] h-[436px]"
-              src="/src/assets/imgs/Image03.png"
+              src={img3}
               alt="Perfil image"
             />
           </div>
