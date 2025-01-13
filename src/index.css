@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  transition: background-color 0s !important; 
-}
-
-
 :root {
   /* Light Mode Colors */
   --color-primary: #1a202c; /* Cor principal para Light Mode */
